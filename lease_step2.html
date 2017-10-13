@@ -37,27 +37,27 @@
 				<li class="info-list">
 					<span class="info-item">单针平缝机</span>
 					<input id="picker-1" class='btn btn-input  fr' placeholder="数量">
-					<input id="picker-2" class='btn btn-input  fr' placeholder="九成新">
+					<input id="picker-2" class='btn btn-input  fr' placeholder="9成新">
 				</li>
 				<li class="info-list">
 					<span class="info-item">双针平缝机</span>
 					<input id="picker-3" class='btn btn-input  fr' placeholder="数量">
-					<input id="picker-4" class='btn btn-input  fr' placeholder="九成新">
+					<input id="picker-4" class='btn btn-input  fr' placeholder="9成新">
 				</li>
 			</ul>
 			<div class="p-title">收货地址</div>
-			<label for='address' class='select-text block'>
-				<input class="" placeholder="选择收货地址" id="address"></input>
+			<label for='city-picker' class='select-text block'>
+				<input class="" placeholder="选择收货地址" id="city-picker"></input>
 				<span class="icon-arrow-r more"></span>
 			</label>
 			<div class="p-title">起租日期</div>
-			<label for='star-time' class='select-text block'>
-				<input placeholder="选择起租日期" id="star-time"></input>
+			<label for='date' class='select-text block'>
+				<input placeholder="选择起租日期" id="date"></input>
 				<span class="icon-arrow-r more"></span>
 			</label>
 			<div class="p-title">还租日期</div>
-			<label for='back-time' class='select-text block'>
-				<input class="" placeholder="选择还租日期" id="back-time"></input>
+			<label for='date-return' class='select-text block'>
+				<input class="" placeholder="选择还租日期" id="date-return"></input>
 				<span class="icon-arrow-r more"></span>
 			</label>
 			<a href="./lease_step3.html" class="btn btn-default btn-fixed">下一步</a>
@@ -70,68 +70,5 @@
 	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
 	<script type="text/javascript" src="./js/public.js"></script>
-	<script type="text/javascript">
-		window.$$=window.Zepto = Zepto;
-
-		$$("#star-time").calendar({
-			value: ['2015-01-01']
-		});
-		$$("#back-time").calendar({
-			value: ['2015-01-01']
-		});
-		$$("#address").cityPicker({
-			toolbarTemplate: '<header class="bar bar-nav">\
-			<button class="button button-link pull-right close-picker">确定</button>\
-			</header>'
-		});
-		$$("#picker-1").picker({
-		toolbarTemplate: '<header class="bar bar-nav">\
-		<button class="button button-link pull-left close-picker">取消</button>\
-		<button class="button button-link pull-right close-picker">确定</button>\
-		</header>',
-		cols: [
-			{
-				textAlign: 'center',
-				values: ['1件', '2件', '3件', '4件', '5件', '6件', '7件', '8件', '9件', '10件', '11件', '12件', '13件', '14件', '15件', '16件', '17件', '18件', '19件', '20件']
-			}
-		]
-		});
-		$$("#picker-2").picker({
-		toolbarTemplate: '<header class="bar bar-nav">\
-		<button class="button button-link pull-left close-picker">取消</button>\
-		<button class="button button-link pull-right close-picker">确定</button>\
-		</header>',
-		cols: [
-			{
-				textAlign: 'center',
-				values: ['5成新', '6成新', '7成新', '8成新', '9成新']
-			}
-		]
-		});
-		$$("#picker-3").picker({
-		toolbarTemplate: '<header class="bar bar-nav">\
-		<button class="button button-link pull-left close-picker">取消</button>\
-		<button class="button button-link pull-right close-picker">确定</button>\
-		</header>',
-		cols: [
-			{
-				textAlign: 'center',
-				values: ['1件', '2件', '3件', '4件', '5件', '6件', '7件', '8件', '9件', '10件', '11件', '12件', '13件', '14件', '15件', '16件', '17件', '18件', '19件', '20件']
-			}
-		]
-		});
-		$$("#picker-4").picker({
-		toolbarTemplate: '<header class="bar bar-nav">\
-		<button class="button button-link pull-left close-picker">取消</button>\
-		<button class="button button-link pull-right close-picker">确定</button>\
-		</header>',
-		cols: [
-			{
-				textAlign: 'center',
-				values: ['5成新', '6成新', '7成新', '8成新', '9成新']
-			}
-		]
-		});
-	</script>
 </body>
 </html>

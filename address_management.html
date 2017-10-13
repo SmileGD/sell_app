@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src='./js/normalize.js'></script>
-	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
 </head>
 <body>
 	<div class="page-group">
@@ -24,9 +23,9 @@
 					<input type='text' placeholder="手机或固话"></input>
 				</li>
 				<li class="info-list">
-					<label class="addr-2">
+					<label class="city-picker">
 						<span class="info-left">选择地区</span>
-						<input type='text' placeholder="地区信息" id='addr-2'></input>
+						<input type='text' placeholder="地区信息" id='city-picker'></input>
 						<span class="icon-arrow-r more"></span>
 					</label>
 				</li>
@@ -49,13 +48,5 @@
 	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
 	<script type="text/javascript" src="./js/public.js"></script>
-	<script type="text/javascript">
-		window.$$=window.Zepto = Zepto;
-		$$("#addr-2").cityPicker({
-			toolbarTemplate: '<header class="bar bar-nav">\
-			<button class="button button-link pull-right close-picker">确定</button>\
-			</header>'
-		});
-	</script>
 </body>
 </html>

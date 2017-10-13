@@ -7,7 +7,6 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/normalize.js"></script>
-	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
 </head>
 <body>
 	<div class="header-alert">
@@ -37,24 +36,8 @@
 			<a href='./repair_brand.html' class="info-item">包缝机</a>
 		</li>
 	</ul>
+
+	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
-	<script type="text/javascript">
-		  var search = $('.search')[0];
-    var icon = $('.icon-search')[0];
-
-    search.focus(function(){
-        console.log(1);
-        $(this).css("padding-left",'1rem');
-        $(icon).css('left','0.6rem');
-    })
-
-    search.blur(function(){
-        if($(this).val().length == 0){
-            $(this).css("padding-left",'7.8rem');
-            $(icon).css('left','7.4rem');
-        }
-    })
-
-	</script>
 </body>
 </html>
