@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
+	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/normalize.js"></script>
+</head>
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<ul class="step-wrapper">
+				<div class="step-line"></div>
+				<li class="step step1">
+					<a href="javascript:;">1</a>
+					<p>选择设备</p>
+				</li>
+				<li class="step step2 active">
+					<a href="javascript:;">2</a>
+					<p>需求确认</p>
+				</li>
+				<li class="step step3">
+					<a href="javascript:;">3</a>
+					<p>进行支付</p>
+				</li>
+			</ul>
+			<div class="title">
+				<p class="title-top">确认需求清单</p>
+				<p class="title-bottom">请填写租赁设备的数量以及品质要求</p>
+			</div>
+			<div class="p-title">已选租赁设备</div>
+			<ul class="info-wrapper">
+				<li class="info-list">
+					<span class="info-item">单针平缝机</span>
+					<input id="picker-1" class='btn btn-input  fr' placeholder="数量">
+					<input id="picker-2" class='btn btn-input  fr' placeholder="九成新">
+				</li>
+				<li class="info-list">
+					<span class="info-item">双针平缝机</span>
+					<input id="picker-3" class='btn btn-input  fr' placeholder="数量">
+					<input id="picker-4" class='btn btn-input  fr' placeholder="九成新">
+				</li>
+			</ul>
+			<div class="p-title">收货地址</div>
+			<label for='address' class='select-text block'>
+				<input class="" placeholder="选择收货地址" id="address"></input>
+				<span class="icon-arrow-r more"></span>
+			</label>
+			<div class="p-title">起租日期</div>
+			<label for='star-time' class='select-text block'>
+				<input placeholder="选择起租日期" id="star-time"></input>
+				<span class="icon-arrow-r more"></span>
+			</label>
+			<div class="p-title">还租日期</div>
+			<label for='back-time' class='select-text block'>
+				<input class="" placeholder="选择还租日期" id="back-time"></input>
+				<span class="icon-arrow-r more"></span>
+			</label>
+			<a href="./lease_step3.html" class="btn btn-default btn-fixed">下一步</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
+	<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
+	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="./js/public.js"></script>
+	<script type="text/javascript">
+		window.$$=window.Zepto = Zepto;
+
+		$$("#star-time").calendar({
+			value: ['2015-01-01']
+		});
+		$$("#back-time").calendar({
+			value: ['2015-01-01']
+		});
+		$$("#address").cityPicker({
+			toolbarTemplate: '<header class="bar bar-nav">\
+			<button class="button button-link pull-right close-picker">确定</button>\
+			</header>'
+		});
+		$$("#picker-1").picker({
+		toolbarTemplate: '<header class="bar bar-nav">\
+		<button class="button button-link pull-left close-picker">取消</button>\
+		<button class="button button-link pull-right close-picker">确定</button>\
+		</header>',
+		cols: [
+			{
+				textAlign: 'center',
+				values: ['1件', '2件', '3件', '4件', '5件', '6件', '7件', '8件', '9件', '10件', '11件', '12件', '13件', '14件', '15件', '16件', '17件', '18件', '19件', '20件']
+			}
+		]
+		});
+		$$("#picker-2").picker({
+		toolbarTemplate: '<header class="bar bar-nav">\
+		<button class="button button-link pull-left close-picker">取消</button>\
+		<button class="button button-link pull-right close-picker">确定</button>\
+		</header>',
+		cols: [
+			{
+				textAlign: 'center',
+				values: ['5成新', '6成新', '7成新', '8成新', '9成新']
+			}
+		]
+		});
+		$$("#picker-3").picker({
+		toolbarTemplate: '<header class="bar bar-nav">\
+		<button class="button button-link pull-left close-picker">取消</button>\
+		<button class="button button-link pull-right close-picker">确定</button>\
+		</header>',
+		cols: [
+			{
+				textAlign: 'center',
+				values: ['1件', '2件', '3件', '4件', '5件', '6件', '7件', '8件', '9件', '10件', '11件', '12件', '13件', '14件', '15件', '16件', '17件', '18件', '19件', '20件']
+			}
+		]
+		});
+		$$("#picker-4").picker({
+		toolbarTemplate: '<header class="bar bar-nav">\
+		<button class="button button-link pull-left close-picker">取消</button>\
+		<button class="button button-link pull-right close-picker">确定</button>\
+		</header>',
+		cols: [
+			{
+				textAlign: 'center',
+				values: ['5成新', '6成新', '7成新', '8成新', '9成新']
+			}
+		]
+		});
+	</script>
+</body>
+</html>

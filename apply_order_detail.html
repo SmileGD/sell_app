@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./node_modules/swiper/dist/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/normalize.js"></script>
+</head>
+<body>
+			<div class="swiper-container detail-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="./images/cloth-1.png" alt="">
+					</div>
+					<div class="swiper-slide">
+						123
+					</div>
+					<div class="swiper-slide">
+						456
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+	<ul class="info-wrapper verify">
+		<li class="info-list">
+			<span class="info-left">发布日期</span>
+			<span class="info-right">2017-09-14</span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">产品名称</span>
+			<span class="info-right">纯棉T袖</span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">工艺类别</span>
+			<span class="info-right">普通梭织薄料服装</span>
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">订单数量</span>
+			<span class="info-right">1000件</span>
+		</li>
+		<li class="info-list play-father">
+			<span class="info-left">销售市场</span>
+			<span class="info-right">内销</span>
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list play-father">
+			<span class="info-left">预计交货</span>
+			<span class="info-right">2017-12-12</span>
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list play-father">
+			<span class="info-left">地区要求</span>
+			<span class="info-right">泉州</span>
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list play-father">
+			<span class="info-left">订单说明</span>
+			<span class="info-right">需要保质保量</span>
+		</li>
+	</ul>
+	<a href="./apply_order.html" class="btn btn-default btn-top">申请接单</a>
+	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
+	<script type="text/javascript" src="./node_modules/swiper/dist/js/swiper.min.js"></script>
+	<script type="text/javascript" src="./js/public.js"></script>
+	<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container',{
+		pagination: '.swiper-pagination',
+		slidesPerView: 1,
+		paginationClickable: true,
+		spaceBetween: 30,
+		loop: true,
+		// autoplay: 1500
+	});
+	</script>
+</body>
+</html>

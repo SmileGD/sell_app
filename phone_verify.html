@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
+	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/normalize.js"></script>
+</head>
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<ul class="info-wrapper verify">
+				<li class="info-list">
+					<label for="city-picker">
+						<span class="info-left">国家/地区</span>
+						<input type="text" placeholder="中国(+86)" id="city-picker">
+						<span class="icon-arrow-r more"></span>
+					</label>
+				</li>
+				<li class="info-list">
+					<span class="info-left">手机号码</span>
+					<input type="tel" maxlength="11" placeholder="请输入手机号">
+					<input type="button" name="" value="获取验证码">
+				</li>
+				<li class="info-list">
+					<span class="info-left">验证码</span>
+					<input type='text' placeholder="输入验证码" class="info-right"></input>
+				</li>
+			</ul>
+			<button type="button" class="btn btn-default">下一步</button>
+			<div class="explain fixed">
+				<p>本服务由云衣尚提供底层技术支持</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
+		<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
+	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src='./js/public.js'></script>
+	<script type="text/javascript">
+		window.$$=window.Zepto = Zepto;
+
+		$$("#city-picker").cityPicker({
+			toolbarTemplate: '<header class="bar bar-nav">\
+			<button class="button button-link pull-right close-picker">确定</button>\
+			</header>'
+		});
+	</script>
+</body>
+</html>

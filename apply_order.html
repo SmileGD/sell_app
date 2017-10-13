@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/normalize.js"></script>
+</head>
+<body>
+	<ul class="info-wrapper verify">
+		<li class="info-list">
+			<span class="info-left">申请数量</span>
+			<input type='text' placeholder="请输入数量" class="info-right"></input>
+		</li>
+		<li class="info-list">
+			<span class="info-left">申请说明</span>
+			<input type='text' placeholder="请填写相关情况说明或接单优势" class="info-right last-exp"></input>
+		</li>
+	</ul>
+	<div class="p-title">上传图片</div>
+	<ul class="upload-s-wrapper clearfix">
+		<li class="upload-s-content" style="display:none">
+			<img src="" class="product-p">
+		</li>
+		<li class="upload-s-content">
+			<label for="upload">
+				<img src="./images/add.png" class="add-icon">
+				<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
+			</label>
+		</li>
+	</ul>
+	<div class='agree agree-position'>
+		<input type="checkbox" name="checkbox">
+		<span>已阅读并同意<a href="#">《泰禾优选争议处理规范》</a></span>
+	</div>
+	<a href="#" class="btn btn-default">发送申请</a>
+
+	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
+	<script type="text/javascript" src="./js/public.js"></script>
+</body>
+</html>
