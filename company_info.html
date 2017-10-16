@@ -5,119 +5,100 @@
 	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title></title>
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/normalize.js"></script>
 </head>
 <body>
-	<div class="page-group">
-		<div class="page page-current">
-			<div class="title">
-				<p class="title-top">完善企业信息</p>
-				<p class="title-bottom">信息仅用于平台审核，不会泄露给任何组织或个人</p>
-			</div>
-			<div class="p-title">企业信息</div>
-			<ul class="info-wrapper verify">
-				<li class="info-list">
-					<span class="info-left">企业名称*</span>
-					<input type='text' placeholder="请输入完整名称"></input>
-				</li>
-				<li class="info-list">
-					<span class="info-left">企业类型*</span>
-					<input type='text' placeholder="请选择企业类型"></input>
-					<span class="icon-arrow-r more"></span>
-				</li>
-				<li class="info-list">
-					<label for='build'>
-						<span class="info-left">成立时间*</span>
-						<input type='text' placeholder="请选择年份" id="build"></input>
-						<span class="icon-arrow-r more"></span>
-					</label>
-				</li>
-				<li class="info-list">
-					<span class="info-left">主要加工*</span>
-					<input type='text' placeholder="请选择可加工产品类型"></input>
-					<span class="icon-arrow-r more"></span>
-				</li>
-				<li class="info-list">
-					<span class="info-left">员工总数*</span>
-					<input type='text' placeholder="请输入企业员工总数"></input>
-				</li>
-				<li class="info-list">
-					<span class="info-left">主要设备*</span>
-					<input type='text' placeholder="请选择设备及数量"></input>
-					<span class="icon-arrow-r more"></span>
-				</li>
-				<li class="info-list">
-					<span class="info-left">厂房面积</span>
-					<input type='text' placeholder="比如：500平方"></input>
-				</li>
-				<li class="info-list">
-					<span class="info-left">销售渠道*</span>
-					<input type='text' placeholder="请选择销售渠道"></input>
-					<span class="icon-arrow-r more"></span>
-				</li>
-				<li class="info-list">
-					<span class="info-left">品牌信息</span>
-					<input type='text' placeholder="请输入品牌名称"></input>
-				</li>
-				<li class="info-list">
-					<span class="info-left">企业介绍</span>
-					<input type='text' placeholder="简短的介绍一下企业"></input>
-				</li>
-			</ul>
-			<div class="p-title">企业信息</div>
-			<ul class="info-wrapper verify">
-				<li class="info-list">
-					<label for="addr-1">
-						<span class="info-left">所在地区</span>
-						<input type="text" id="addr-1">
-						<span class="icon-arrow-r more"></span>
-					</label>
-				</li>
-				<li class="info-list">
-					<span class="info-left">详细地址</span>
-					<input type='text'></input>
-				</li>
-			</ul>
-			<div class="p-title">企业环境照片</div>
-				<ul class="upload-s-wrapper clearfix">
-					<li class="upload-s-content" style="display:none">
-						<img src="" class="product-p">
-					</li>
-					<li class="upload-s-content">
-						<label for="upload">
-							<img src="./images/add.png" class="add-icon">
-							<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
-						</label>
-					</li>
-				</ul>
-			</div>
-		</div>
-
+	<div class="title">
+		<p class="title-top">完善企业信息</p>
+		<p class="title-bottom">信息仅用于平台审核，不会泄露给任何组织或个人</p>
+	</div>
+	<div class="p-title">企业信息</div>
+	<ul class="info-wrapper verify">
+		<li class="info-list">
+			<span class="info-left">企业名称*</span>
+			<input type='text' placeholder="请输入完整名称">
+		</li>
+		<li class="info-list">
+			<span class="info-left">企业类型*</span>
+			<input type='text' placeholder="请选择企业类型">
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<label for='date'>
+				<span class="info-left">成立时间*</span>
+				<span class="time-container time-placeholder">请选择年份</span>
+				<span class="icon-arrow-r more"></span>
+				<input type="date" class="date" id="date" style="opacity: 0;">
+			</label>
+		</li>
+		<li class="info-list">
+			<span class="info-left">主要加工*</span>
+			<input type='text' placeholder="请选择可加工产品类型">
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">员工总数*</span>
+			<input type='text' placeholder="请输入企业员工总数">
+		</li>
+		<li class="info-list">
+			<span class="info-left">主要设备*</span>
+			<input type='text' placeholder="请选择设备及数量">
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">厂房面积</span>
+			<input type='text' placeholder="比如：500平方">
+		</li>
+		<li class="info-list">
+			<span class="info-left">销售渠道*</span>
+			<input type='text' placeholder="请选择销售渠道">
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">品牌信息</span>
+			<input type='text' placeholder="请输入品牌名称">
+		</li>
+		<li class="info-list">
+			<span class="info-left">企业介绍</span>
+			<input type='text' placeholder="简短的介绍一下企业">
+		</li>
+	</ul>
+	<div class="p-title">企业信息</div>
+	<ul class="info-wrapper verify">
+		<li class="info-list">
+			<label for="city-picker">
+				<span class="info-left">所在地区</span>
+				<span id="city-picker" class="w-11"></span>
+				<span class="icon-arrow-r more"></span>
+			</label>
+		</li>
+		<li class="info-list">
+			<span class="info-left">详细地址</span>
+			<input type='text'></input>
+		</li>
+	</ul>
+	<div class="p-title">企业环境照片</div>
+	<ul class="upload-s-wrapper clearfix">
+		<li class="upload-s-content" style="display:none">
+				<img src="" class="product-p">
+		</li>
+		<li class="upload-s-content">
+			<label for="upload">
+				<img src="./images/add.png" class="add-icon">
+				<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
+			</label>
+		</li>
+	</ul>
 	<button type="button" class="btn btn-default btn-top">提交审核</button>
 
+
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
-
+	<script type="text/javascript" src="./js/city.js"></script>
+	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
-	<script type="text/javascript">
 
-		window.onload = function(){
-			window.$$=window.Zepto = Zepto;
-			$$("#build").calendar({
-				value: ['2015-12-05']
-			});
-			$$("#addr-1").cityPicker({
-				toolbarTemplate: '<header class="bar bar-nav">\
-				<button class="button button-link pull-right close-picker">确定</button>\
-				</header>'
-			});
-		}
+	<script>
 	</script>
 </body>
 </html>

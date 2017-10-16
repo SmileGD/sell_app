@@ -7,11 +7,11 @@
 
 @font-face {
 	font-family: 'machine';
-	src:  url('fonts/machine.eot?u74o7j');
-	src:  url('fonts/machine.eot?u74o7j#iefix') format('embedded-opentype'),
-	url('fonts/machine.ttf?u74o7j') format('truetype'),
-	url('fonts/machine.woff?u74o7j') format('woff'),
-	url('fonts/machine.svg?u74o7j#machine') format('svg');
+	src:  url('fonts/machine.eot?ub3ohp');
+	src:  url('fonts/machine.eot?ub3ohp#iefix') format('embedded-opentype'),
+		url('fonts/machine.ttf?ub3ohp') format('truetype'),
+		url('fonts/machine.woff?ub3ohp') format('woff'),
+		url('fonts/machine.svg?ub3ohp#machine') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,6 +31,15 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wechat:before {
+	content: "\e91b";
+}
+.icon-wajue:before {
+	content: "\e919";
+}
+.icon-search-big:before {
+	content: "\e91a";
+}
 .icon-money:before {
 	content: "\e918";
 }
@@ -111,6 +120,8 @@
 
 
 
+
+
 body {
 	background-color: #eee;
 }
@@ -124,7 +135,7 @@ input {
 input:focus,textarea:focus,button {
 	outline: none;
 }
-input::placeholder,textarea::placeholder {
+input::placeholder,textarea::placeholder,.time-placeholder {
 	font-size: 0.8rem;
 	color: @ccc;
 }
@@ -248,16 +259,18 @@ ul,textarea {
 	border: 0.05rem solid #000;
 	margin-left: 0.6rem;
 }
-.btn-input{
+.btn-span{
 	display: inline-block;
 	width: 4.0rem;
 	height: 1.5rem;
 	font-size: 0.8rem;
-	border: 1px solid #353535;
+	border: 0.05rem solid #353535;
+	box-sizing: border-box;
 	background: #fff;
 	margin-left: 0.5rem;
 	margin-top: -0.15rem;
 	text-align: center;
+	line-height: 1.4rem;
 }
 .btn-input::placeholder{
 	color: #000;
@@ -351,6 +364,18 @@ ul,textarea {
 			color: @999;
 			vertical-align: top;
 		}
+		.w-11{
+			display: inline-block;
+			width: 11rem;
+		}
+		.hui{
+				color: #ccc;
+		}
+		.w-16{
+			display: inline-block;
+			width: 16rem;
+		}
+
 	}
 	.info-list:last-child {
 		border-bottom: 0;
@@ -522,7 +547,7 @@ ul,textarea {
 	.intro {
 		width: 100%;
 		box-sizing: border-box;
-		padding: 0.4rem 0 0 0.7rem;
+		padding: 0.4rem 0.7rem;
 		height: 8.5rem;
 		resize: none;
 	}
@@ -796,9 +821,9 @@ ul,textarea {
 		height: 1.45rem;
 		margin-right: 0.6rem;
 		float: left;
-		background: url("../images/Star_off.png");
+		background-image: url("../images/Star_off.png");
 		background-repeat: no-repeat;
-		cursor:pointer;
+		background-size: 1.55rem 1.45rem;
 	}
 	.rating-item:last-child {
 		margin: 0;
@@ -858,6 +883,15 @@ ul,textarea {
 .checkbox:checked+.checkbox-icon {
 	background: url('../images/checked.png') no-repeat;
 	background-position: -0.05rem -0.05rem;
+	background-size: 1.15rem 1.15rem;
+}
+.rating-text{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.4rem 0.7rem;
+	height: 5.5rem;
+	resize: none;
+	margin-bottom: 1.55rem;
 }
 //上传图片
 .upload_wrapper {
@@ -929,6 +963,18 @@ ul,textarea {
 			line-height: 1.1rem;
 			font-size: 0.8rem;
 			color: #000;
+		}
+		.time-container{
+			display: inline-block;
+			width: 11.0rem;
+		}
+		.date{
+			position: absolute;
+			left: -50.0rem;
+			top: 0;
+			&::active{
+				color:#f00;
+			}
 		}
 		.certified {
 			float: right;
@@ -1472,6 +1518,93 @@ ul,textarea {
 				}
 			}
 		}
+	}
+}
+.recharge-wrapper{
+	margin: 0.5rem 0.7rem;
+	background: #fff;
+	.recharge{
+		padding: 1.3rem 1.0rem;
+		border-bottom: 0.05rem solid #e5e5e5;
+		position: relative;
+		.balance{
+			height: 1.0rem;
+			line-height: 1.0rem;
+			font-size: 0.7rem;
+			margin-top: 0.6rem;
+		}
+		.text{
+			float: right;
+			line-height: 1.8rem;
+			font-size: 0.7rem;
+			margin-left: 0.7rem;
+			color: #e5e5e5;
+		}
+		.money{
+			float: right;
+			height: 1.5rem;
+			line-height: 1.5rem;
+			font-size: 1.5rem;
+			color: #e5e5e5;
+		}
+		p{
+			font-size: 0.6rem;
+			color: #999;
+			margin-top: 0.25rem;
+			a{
+				color: #1aad19;
+			}
+		}
+	}
+	.padding-top{
+		height: 4.6rem;
+		padding: 0 1.0rem 0.8rem;
+		.center{
+			position: absolute;
+			left: 50%;
+			bottom: 0.8rem;
+			transform: translateX(-50%);
+		}
+	}
+}
+.error-wrapper{
+	width: 5.1rem;
+	height: 5.1rem;
+	position: absolute;
+	left: 50%;
+	top: 8.0rem;
+	transform: translateX(-50%);
+	.icon-check-bg{
+		font-size: 5.1rem;
+		color: #e5e5e5;
+	}
+	.icon-wajue{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 2.5rem;
+		color: #fff;
+	}
+	.icon-search-big{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 2.5rem;
+		color: #fff;
+	}
+	.error-text{
+		position: absolute;
+		left: 50%;
+		bottom: -1.7rem;
+		transform: translateX(-50%);
+		width: 5.1rem;
+		height: 1.0rem;
+		line-height: 1.0rem;
+		text-align: center;
+		font-size: 0.7rem;
+		color: #999;
 	}
 }
 

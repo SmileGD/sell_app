@@ -5,34 +5,23 @@
 	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="./node_modules/jQuery.cxCalendar-1.5.3/css/jquery.cxcalendar.css">
-
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
-
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/normalize.js"></script>
 </head>
 <body>
-	 <div class="page-group">
-		<div class="page page-current">
-			<div class="info-wrapper verify">
-				<div class="info-list">
-					<label for='date' class='info-list'>
-						<span class="info-left">接单档期</span>
-						<input type="text" id='date'>
-						<span class="icon-arrow-r more"></span>
-					</label>
-				</div>
-			</div>
-			<a href="./neutral_list.html" class="btn btn-default btn-top">开始找单</a>
+	<div class="info-wrapper verify">
+		<div class="info-list">
+			<label for='date' class='info-list'>
+				<span class="info-left">接单档期</span>
+				<span class="time-container"></span>
+				<span class="icon-arrow-r more"></span>
+				<input type="date" class="date" id="date" style="opacity: 0;">
+			</label>
 		</div>
 	</div>
+	<a href="./neutral_list.html" class="btn btn-default btn-top">开始找单</a>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type="text/javascript" src="./js/public.js"></script>
 </body>
 </html>

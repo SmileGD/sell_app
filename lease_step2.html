@@ -5,70 +5,68 @@
 	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title></title>
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/normalize.js"></script>
 </head>
 <body>
-	<div class="page-group">
-		<div class="page page-current">
-			<ul class="step-wrapper">
-				<div class="step-line"></div>
-				<li class="step step1">
-					<a href="javascript:;">1</a>
-					<p>选择设备</p>
-				</li>
-				<li class="step step2 active">
-					<a href="javascript:;">2</a>
-					<p>需求确认</p>
-				</li>
-				<li class="step step3">
-					<a href="javascript:;">3</a>
-					<p>进行支付</p>
-				</li>
-			</ul>
-			<div class="title">
-				<p class="title-top">确认需求清单</p>
-				<p class="title-bottom">请填写租赁设备的数量以及品质要求</p>
-			</div>
-			<div class="p-title">已选租赁设备</div>
-			<ul class="info-wrapper">
-				<li class="info-list">
-					<span class="info-item">单针平缝机</span>
-					<input id="picker-1" class='btn btn-input  fr' placeholder="数量">
-					<input id="picker-2" class='btn btn-input  fr' placeholder="9成新">
-				</li>
-				<li class="info-list">
-					<span class="info-item">双针平缝机</span>
-					<input id="picker-3" class='btn btn-input  fr' placeholder="数量">
-					<input id="picker-4" class='btn btn-input  fr' placeholder="9成新">
-				</li>
-			</ul>
-			<div class="p-title">收货地址</div>
-			<label for='city-picker' class='select-text block'>
-				<input class="" placeholder="选择收货地址" id="city-picker"></input>
-				<span class="icon-arrow-r more"></span>
-			</label>
-			<div class="p-title">起租日期</div>
-			<label for='date' class='select-text block'>
-				<input placeholder="选择起租日期" id="date"></input>
-				<span class="icon-arrow-r more"></span>
-			</label>
-			<div class="p-title">还租日期</div>
-			<label for='date-return' class='select-text block'>
-				<input class="" placeholder="选择还租日期" id="date-return"></input>
-				<span class="icon-arrow-r more"></span>
-			</label>
-			<a href="./lease_step3.html" class="btn btn-default btn-fixed">下一步</a>
-		</div>
+	<ul class="step-wrapper">
+		<div class="step-line"></div>
+		<li class="step step1">
+			<a href="javascript:;">1</a>
+			<p>选择设备</p>
+		</li>
+		<li class="step step2 active">
+			<a href="javascript:;">2</a>
+			<p>需求确认</p>
+		</li>
+		<li class="step step3">
+			<a href="javascript:;">3</a>
+			<p>进行支付</p>
+		</li>
+	</ul>
+	<div class="title">
+		<p class="title-top">确认需求清单</p>
+		<p class="title-bottom">请填写租赁设备的数量以及品质要求</p>
 	</div>
+	<div class="p-title">已选租赁设备</div>
+	<ul class="info-wrapper">
+		<li class="info-list">
+			<span class="info-item">单针平缝机</span>
+			<span id="picker1" class='btn btn-span fr'>数量</span>
+			<span id="picker2" class='btn btn-span fr'>9成新</span>
+		</li>
+		<li class="info-list">
+			<span class="info-item">双针平缝机</span>
+			<span id="picker3" class='btn btn-span fr'>数量</span>
+			<span id="picker4" class='btn btn-span fr'>9成新</span>
+		</li>
+	</ul>
+	<div class="p-title">收货地址</div>
+	<label for='city-picker' class='select-text block'>
+		<span id="city-picker" class="time-placeholder w-16">选择收货地址</span>
+		<span class="icon-arrow-r more"></span>
+	</label>
+	<div class="p-title">起租日期</div>
+	<label for='date' class='select-text block'>
+		<span class="time-container time-placeholder w-16">选择起租日期</span>
+		<input type="date" class="date" id="date" style="opacity: 0;">
+		<span class="icon-arrow-r more"></span>
+	</label>
+	<div class="p-title">还租日期</div>
+	<label for='date-1' class='select-text block'>
+		<span class="time-container time-placeholder w-16">选择还租日期</span>
+		<input type="date" class="date" id="date-1" style="opacity: 0;">
+		<span class="icon-arrow-r more"></span>
+	</label>
+	<a href="./lease_step3.html" class="btn btn-default btn-top">下一步</a>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="./js/single.js"></script>
+	<script type="text/javascript" src="./js/city.js"></script>
+	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
+
+	<script>
+	</script>
 </body>
 </html>

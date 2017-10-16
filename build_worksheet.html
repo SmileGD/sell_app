@@ -5,81 +5,77 @@
 	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title></title>
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/normalize.js"></script>
 </head>
 <body>
-	<div class="page-group">
-		<div class="page page-current">
-			<ul class="info-wrapper verify">
-				<li class="info-list">
-					<span class="info-left">产品名称</span>
-					<input type='text' placeholder="如：纯棉T袖" class="info-right">
-				</li>
-				<li class="info-list">
-					<span class="info-left">工艺类别</span>
-					<input type='text' placeholder="请选择工艺类别" class="info-right">
-					<span class="icon-arrow-r more"></span>
-				</li>
-				<li class="info-list">
-					<span class="info-left">订单数量</span>
-					<input type='text' placeholder="请填写预计数量" class="info-right">
-				</li>
-				<li class="info-list play-father">
-					<span class="info-left">销售市场</span>
-					<input type='text' placeholder="请选择销售市场" class="info-right">
-					<span class="icon-arrow-r more"></span>
-				</li>
-				<li class="info-list play-father">
-					<label>
-						<span class="info-left">预计交货</span>
-						<input type='text' id='date' placeholder="请选择预计交货日期" class="info-right">
-						<span class="icon-arrow-r more"></span>
-					</label>
-				</li>
-				<li class="info-list play-father">
-					<label id='adr'>
-						<span class="info-left">地区要求</span>
-						<input type='text' placeholder="请选择工厂所在地" class="info-right" id="city-picker">
-						<span class="icon-arrow-r more"></span>
-					</label>
-				</li>
-				<li class="info-list play-father">
-					<span class="info-left">订单说明</span>
-					<input type='text' placeholder="请填写订单详细资料(非必填)" class="info-right last-exp"></input>
-				</li>
-			</ul>
-			<div class="p-title">产品图片</div>
-			<ul class="upload-s-wrapper clearfix">
-				<li class="upload-s-content">
-					<img src="./images/cloth.png" class="product-p">
-				</li>
-				<li class="upload-s-content">
-					<label for="upload">
-						<img src="./images/add.png" class="add-icon">
-						<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
-					</label>
-				</li>
-			</ul>
-			<button type="button" class="btn btn-default btn-top btn-announce">确认发布</button>
-			<div class="announce">
-				<div class="confirm">
-					<h3 class="confirm-title">加工订单</h3>
-					<p>加工订单发布成功</p>
-					<a class="check" href="./worksheet_detail.html">查看订单</a>
-					<a class="return" href="./position.html">返回首页</a>
-				</div>
-			</div>
+	<ul class="info-wrapper verify">
+		<li class="info-list">
+			<span class="info-left">产品名称</span>
+			<input type='text' placeholder="如：纯棉T袖" class="info-right">
+		</li>
+		<li class="info-list">
+			<span class="info-left">工艺类别</span>
+			<input type='text' placeholder="请选择工艺类别" class="info-right">
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">订单数量</span>
+			<input type='text' placeholder="请填写预计数量" class="info-right">
+		</li>
+		<li class="info-list play-father">
+			<span class="info-left">销售市场</span>
+			<input type='text' placeholder="请选择销售市场" class="info-right">
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list play-father">
+			<label for="date">
+				<span class="info-left">预计交货</span>
+				<span class="time-container time-placeholder"><sapn class="hui">请选择预计交货日期</sapn></span>
+				<span class="icon-arrow-r more"></span>
+				<input type="date" class="date" id="date" style="opacity: 0;">
+			</label>
+		</li>
+		<li class="info-list play-father">
+			<label for='city-picker'>
+				<span class="info-left">地区要求</span>
+				<span class="w-11" id="city-picker"><span class="hui">请选择工厂所在地</span></span>
+				<span class="icon-arrow-r more"></span>
+			</label>
+		</li>
+		<li class="info-list play-father">
+			<span class="info-left">订单说明</span>
+			<input type='text' placeholder="请填写订单详细资料(非必填)" class="info-right last-exp"></input>
+		</li>
+	</ul>
+	<div class="p-title">产品图片</div>
+	<ul class="upload-s-wrapper clearfix">
+		<li class="upload-s-content">
+			<img src="./images/cloth.png" class="product-p">
+		</li>
+		<li class="upload-s-content">
+			<label for="upload">
+				<img src="./images/add.png" class="add-icon">
+				<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
+			</label>
+		</li>
+	</ul>
+	<button type="button" class="btn btn-default btn-top btn-announce">确认发布</button>
+	<div class="announce">
+		<div class="confirm">
+			<h3 class="confirm-title">加工订单</h3>
+			<p>加工订单发布成功</p>
+			<a class="check" href="./worksheet_detail.html">查看订单</a>
+			<a class="return" href="./position.html">返回首页</a>
 		</div>
 	</div>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="./js/city.js"></script>
+	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
+
+	<script>
+	</script>
 </body>
 </html>
