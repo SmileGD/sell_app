@@ -36,7 +36,7 @@ $('.play').each(function(){
 //点击选中勾选
 $('.info-check').each(function(){
     $(this).on('click',function(){
-        $(this).find('i').toggle();
+        $(this).find('.icon-check').toggle();
     })
 })
 

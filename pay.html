@@ -9,14 +9,36 @@
 	<script type="text/javascript" src="./js/normalize.js"></script>
 </head>
 <body>
-	<div class="pay-wrapper">
-		<ul class='pay'>
-			<li class="pay-item">
-				<i class="icon-wechat"></i>
-			</li>
-		</ul>
+	<ul class="info-wrapper">
+		<li class="info-list">
+			<p class="server-price">确认服务价格</p>
+		</li>
+		<li class="info-list">
+			<span class="text">单号：102883997890</span>
+			<span class="money fr">200.00元</span>
+		</li>
+		<li class="info-list">
+			<span class="text">请输入小费/零件费：</span>
+			<span class='btn btn-span fr'><span class="hui">0.00元</span></span>
+		</li>
+	</ul>
+	<div class="p-title">选择支付方式</div>
+	<ul class="info-wrapper">
+		<li class="info-list info-check">
+			<i class="icon-wechat"></i>
+			<span class="info-item">微信支付</span>
+			<i class="icon-check checked"></i>
+		</li>
+		<li class="info-list info-check">
+			<i class='icon-money'></i>
+			<span class="info-item">余额支付</span>
+			<i class="icon-check checked"></i>
+		</li>
+	</ul>
+	<div class="btn-fixed">
+		<p class="text">支付总金额为服务费和小费</p>
+		<a href="#" class="btn btn-default">确认支付210.00元</a>
 	</div>
-
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
 	<script type="text/javascript" src='./js/public.js'></script>
 </body>

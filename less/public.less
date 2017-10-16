@@ -7,11 +7,11 @@
 
 @font-face {
 	font-family: 'machine';
-	src:  url('fonts/machine.eot?ub3ohp');
-	src:  url('fonts/machine.eot?ub3ohp#iefix') format('embedded-opentype'),
-		url('fonts/machine.ttf?ub3ohp') format('truetype'),
-		url('fonts/machine.woff?ub3ohp') format('woff'),
-		url('fonts/machine.svg?ub3ohp#machine') format('svg');
+	src:  url('fonts/machine.eot?o1jgvo');
+	src:  url('fonts/machine.eot?o1jgvo#iefix') format('embedded-opentype'),
+		url('fonts/machine.ttf?o1jgvo') format('truetype'),
+		url('fonts/machine.woff?o1jgvo') format('woff'),
+		url('fonts/machine.svg?o1jgvo#machine') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,6 +31,27 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-lease:before {
+	content: "\e91c";
+}
+.icon-order:before {
+	content: "\e91d";
+}
+.icon-repair:before {
+	content: "\e91e";
+}
+.icon-X:before {
+	content: "\e91f";
+}
+.icon-location:before {
+	content: "\e920";
+}
+.icon-tool:before {
+	content: "\e921";
+}
+.icon-worker:before {
+	content: "\e922";
+}
 .icon-wechat:before {
 	content: "\e91b";
 }
@@ -117,6 +138,8 @@
 .icon-tmp-1:before {
 	content: "\e900";
 }
+
+
 
 
 
@@ -307,12 +330,45 @@ ul,textarea {
 	left: 50%;
 	bottom: 0.7rem;
 	transform: translateX(-50%);
+	.text{
+		height: 0.85rem;
+		line-height: 0.85rem;
+		font-size: 0.6rem;
+		color: #999;
+		text-align: center;
+		margin-bottom: 0.4rem;
+	}
 }
 //表单
 .info-wrapper {
 	padding-left: 0.7rem;
 	background: #fff;
 	list-style: none;
+	margin-top: 0.5rem;
+	.info-h {
+		padding: 0.5rem 0;
+		.info-right{
+			.right-desc{
+				margin-left: 0.7rem;
+				p {
+					width: 14.0rem;
+					font-size: 0.7rem;
+					color: #555;
+					span {
+						font-size: 0.6rem;
+						color: #999;
+					}
+				}
+				.dis {
+					width: 14.0rem;
+					font-size: 0.7rem;
+					color: #999;
+					margin-top: 0.5rem;
+				}
+			}
+
+		}
+	}
 	.info-list {
 		padding: 0.55rem 0.7rem 0.55rem 0;
 		border-bottom: 0.05rem solid #e5e5e5;
@@ -336,6 +392,9 @@ ul,textarea {
 			height: 1.1rem;
 			line-height: 1.1rem;
 			font-size: 0.8rem;
+			img {
+				margin-top: 0.8rem;
+			}
 		}
 		.info-left-width {
 			width: 4.0rem;
@@ -364,18 +423,90 @@ ul,textarea {
 			color: @999;
 			vertical-align: top;
 		}
-		.w-11{
+		.textarea {
+			width: 14.0rem;
+			line-height: 1.1rem;
+			font-size: 0.8rem;
+			color: #999;
+			vertical-align: top;
+			resize: none;
+		}
+		.w-11 {
 			display: inline-block;
 			width: 11rem;
 		}
-		.hui{
+		.hui {
 				color: #ccc;
 		}
-		.w-16{
+		.w-16 {
 			display: inline-block;
 			width: 16rem;
 		}
-
+		.server-price {
+			height: 1.1rem;
+			line-height: 1.1rem;
+			font-size: 0.8rem;
+			color: #4a4a4a;
+			text-align: center;
+		}
+		.text {
+			height: 1.1rem;
+			line-height: 1.1rem;
+			font-size: 0.7rem;
+			color: #4a4a4a;
+		}
+		.money {
+			font-size: 0.7rem;
+			color: #e64340;
+			margin-top: 0.15rem;
+		}
+		.btn-text {
+			font-size: 0.8rem;
+			color: #d8d8d8;
+		}
+		.icon-wechat {
+			display: inline-block;
+			width: 2.25rem;
+			font-size: 0.95rem;
+			color: #1aad19;
+		}
+		.icon-money {
+			display: inline-block;
+			width: 2.25rem;
+			font-size: 1.15rem;
+		}
+		.info-title {
+			line-height: 1.1rem;
+			font-size: 0.8rem;
+		}
+		form {
+			margin-top: 1.0rem;
+			margin-bottom: 0.2rem;
+			font-size: 0.8rem;
+			color: #4a4a4a;
+			meter {
+				width: 7.65rem;
+				height: 0.6rem;
+				margin: 0 0.7rem 0 1.2rem;
+			}
+			meter::-webkit-meter-bar, meter::-webkit-meter-optimum-value {
+				border-radius: 0.6rem;
+			}
+			meter::-webkit-meter-bar {
+				background: #d8d8d8;
+			}
+			meter::-webkit-meter-suboptimum-value {
+				background: #1aad19;
+				border-radius: 0.6rem;
+			}
+			.trust-value {
+				font-size: 0.5rem;
+				color: #e64340;
+			}
+		}
+	}
+	.info-rating{
+		border-bottom: 0;
 	}
 	.info-list:last-child {
 		border-bottom: 0;
@@ -687,6 +818,9 @@ ul,textarea {
 			line-height: 1.35rem;
 			color: #555;
 		}
+		.mr-20{
+			margin-right: 1.0rem;
+		}
 		.pt-content {
 			font-size: 0.7rem;
 			height: 1.0rem;
@@ -756,6 +890,9 @@ ul,textarea {
 .nav-wrapper {
 	padding: 0.55rem 0;
 	background: @fff;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
 	.nav-item {
 		width: 20%;
 		height: 0.9rem;
@@ -814,7 +951,6 @@ ul,textarea {
 
 .rating {
 	margin: 0 auto;
-	height: 1.55rem;
 	width: 10.15rem;
 	.rating-item {
 		width: 1.55rem;
@@ -827,6 +963,26 @@ ul,textarea {
 	}
 	.rating-item:last-child {
 		margin: 0;
+	}
+}
+
+.rating-s{
+	margin: 0.15rem 0;
+	.rating-item-s {
+		width: 0.75rem;
+		height: 0.75rem;
+		margin-right: 0.3rem;
+		background-size: 0.75rem 0.75rem;
+	}
+}
+
+.rating-xs{
+	margin: 0.45rem 0 0;
+	.rating-item-xs {
+		width: 0.5rem;
+		height: 0.5rem;
+		margin-right: 0.2rem;
+		background-size: 0.5rem 0.5rem;
 	}
 }
 
@@ -1520,34 +1676,34 @@ ul,textarea {
 		}
 	}
 }
-.recharge-wrapper{
+.recharge-wrapper {
 	margin: 0.5rem 0.7rem;
 	background: #fff;
-	.recharge{
+	.recharge {
 		padding: 1.3rem 1.0rem;
 		border-bottom: 0.05rem solid #e5e5e5;
 		position: relative;
-		.balance{
+		.balance {
 			height: 1.0rem;
 			line-height: 1.0rem;
 			font-size: 0.7rem;
 			margin-top: 0.6rem;
 		}
-		.text{
+		.text {
 			float: right;
 			line-height: 1.8rem;
 			font-size: 0.7rem;
 			margin-left: 0.7rem;
 			color: #e5e5e5;
 		}
-		.money{
+		.money {
 			float: right;
 			height: 1.5rem;
 			line-height: 1.5rem;
 			font-size: 1.5rem;
 			color: #e5e5e5;
 		}
-		p{
+		p {
 			font-size: 0.6rem;
 			color: #999;
 			margin-top: 0.25rem;
@@ -1556,7 +1712,7 @@ ul,textarea {
 			}
 		}
 	}
-	.padding-top{
+	.padding-top {
 		height: 4.6rem;
 		padding: 0 1.0rem 0.8rem;
 		.center{
@@ -1567,18 +1723,18 @@ ul,textarea {
 		}
 	}
 }
-.error-wrapper{
+.error-wrapper {
 	width: 5.1rem;
 	height: 5.1rem;
 	position: absolute;
 	left: 50%;
 	top: 8.0rem;
 	transform: translateX(-50%);
-	.icon-check-bg{
+	.icon-check-bg {
 		font-size: 5.1rem;
 		color: #e5e5e5;
 	}
-	.icon-wajue{
+	.icon-wajue,.icon-search-big {
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -1586,15 +1742,7 @@ ul,textarea {
 		font-size: 2.5rem;
 		color: #fff;
 	}
-	.icon-search-big{
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%,-50%);
-		font-size: 2.5rem;
-		color: #fff;
-	}
-	.error-text{
+	.error-text {
 		position: absolute;
 		left: 50%;
 		bottom: -1.7rem;
