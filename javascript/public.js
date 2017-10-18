@@ -20,18 +20,47 @@ $('.btn-announce').each(function(){
 })
 
 //点击播放按钮 切换播放图标
-$('.play').each(function(){
-    $(this).on('click',function(){
-        var i=$(this).find('i')[0];
-        if($(i).hasClass('icon-Triangle')){
-            $(i).removeClass('icon-Triangle');
-            $(i).addClass('icon-pause');
-        }else{
-            $(i).removeClass('icon-pause');
-            $(i).addClass('icon-Triangle');
+// $('.play').each(function(){
+//     $(this).on('click',function(){
+//         var i=$(this).find('i');
+//         var voice = $('.preloader_1');
+//         if(i.hasClass('icon-Triangle')){
+//             i.removeClass('icon-Triangle');
+//             i.addClass('icon-pause');
+//         }else if(i.hasClass('icon-pause')){
+//             i.removeClass('icon-pause');
+//             i.addClass('icon-Triangle');
+//         }else if(i.hasClass('icon-speak')){
+//             i.hide();
+//             voice.show();
+//             $('.text-explain-1').hide();
+//             $('.text-explain-2').show();
+//         }
+//         if(voice){
+//             $(this).on('click',function(){
+//                 voice.hide();
+//                 $('.recode').hide();
+//                 $('.play_and_remark').show();
+//                 $('.icon-speak').show();
+//             })
+//         }
+//     })
+// })
+
+//除以3的余数的li设置margin-bottom
+if($('.city-list').length > 0){
+    var lis = $('.city-list').children();
+    var l = lis.length % 3;
+    if(l == 0) {
+        for( var i = 0; i < 3; i++){
+            lis[lis.length-i-1].style.marginBottom=2.2+'rem';
         }
-    })
-})
+    }else {
+        for( var i = 0; i < l; i++){
+            lis[lis.length-i-1].style.marginBottom=2.2+'rem';
+        }
+    }
+}
 
 //点击选中勾选
 $('.info-check').each(function(){
@@ -40,10 +69,24 @@ $('.info-check').each(function(){
     })
 })
 
+//点击单选
+$('.info-radio').on('click',function(){
+    $(this).siblings('.info-radio').find('.icon-check').hide();
+    $(this).find('.icon-check').show();
+})
+
+
 //时间选择
 $('.date').each(function(){
     $(this).on('change',function(){
         $(this).siblings('.time-container').html($(this).val());
+    })
+})
+
+//性别选择
+$('.gender').each(function(){
+    $(this).on('change',function(){
+        $(this).siblings('.gender-container').html($(this).val());
     })
 })
 
@@ -58,50 +101,31 @@ if ($('script[src="./node_modules/swiper/dist/js/swiper.min.js"]').length > 0){
     });
 }
 
+//切换按钮
+$('.button').on('click',function(){
+    $(this).toggleClass('button-on');
+    $('.icon-tool').toggle();
+    $('.icon-worker').toggle();
+})
+
+//菜单按钮弹框
+$('.menu').on('click',function(){
+    $('.menu-wrapper').fadeIn();
+})
+
+//关闭菜单按钮
+$('.close').on('click',function(){
+    $('.menu-wrapper').fadeOut();
+})
+
+//定位下拉列表
+$('.select').on('click',function(){
+    $('.city-select').toggle();
+})
+
 //picker
 if ($('script[src="./js/single.js"]').length > 0){
     var data1 = [
-        {
-            text: '1件',
-            value: 1
-        }, {
-            text: '2件',
-            value: 2
-        },
-        {
-            text: '3件',
-            value: 3
-        },
-        {
-            text: '4件',
-            value: 4
-        },
-        {
-            text: '5件',
-            value: 5
-        },
-        {
-            text: '6件',
-            value: 6
-        },
-        {
-            text: '7件',
-            value: 7
-        }, {
-            text: '8件',
-            value: 8
-        },
-        {
-            text: '9件',
-            value: 9
-        },
-        {
-            text: '10件',
-            value: 10
-        }
-    ];
-
-    var data2 = [
         {
         text: '5成新',
          value: 1
@@ -125,8 +149,6 @@ if ($('script[src="./js/single.js"]').length > 0){
 
     var picker1El = document.getElementById('picker1');
     var picker2El = document.getElementById('picker2');
-    var picker3El = document.getElementById('picker3');
-    var picker4El = document.getElementById('picker4');
 
     var picker1 = new Picker({
         data: [data1]
@@ -134,46 +156,22 @@ if ($('script[src="./js/single.js"]').length > 0){
 
     picker1.on('picker.select', function (selectedVal, selectedIndex) {
         picker1El.innerText = data1[selectedIndex[0]].text;
-     });
+    });
 
     picker1El.addEventListener('click', function () {
         picker1.show();
-     });
+    });
 
     var picker2 = new Picker({
-        data: [data2]
+        data: [data1]
     });
 
     picker2.on('picker.select', function (selectedVal, selectedIndex) {
-        picker2El.innerText = data2[selectedIndex[0]].text;
+        picker2El.innerText = data1[selectedIndex[0]].text;
     });
 
     picker2El.addEventListener('click', function () {
         picker2.show();
-    });
-
-    var picker3 = new Picker({
-        data: [data1]
-    });
-
-    picker3.on('picker.select', function (selectedVal, selectedIndex) {
-        picker3El.innerText = data1[selectedIndex[0]].text;
-    });
-
-    picker3El.addEventListener('click', function () {
-        picker3.show();
-    });
-
-    var picker4 = new Picker({
-        data: [data2]
-    });
-
-    picker4.on('picker.select', function (selectedVal, selectedIndex) {
-        picker4El.innerText = data2[selectedIndex[0]].text;
-    });
-
-    picker4El.addEventListener('click', function () {
-        picker4.show();
     });
 }
 
@@ -279,8 +277,8 @@ if($('script[src="./js/city.js"]').length > 0){
     }
 });
     picker.on('picker.valuechange', function (selectedVal, selectedIndex) {
-        console.log(selectedVal);
-        console.log(selectedIndex);
+        // console.log(selectedVal);
+        // console.log(selectedIndex);
     });
 
 }
@@ -425,3 +423,17 @@ $('#rating').rating({
     num:0
 })
 
+$('#rating-1').rating({
+    mode:'lightEntire',
+    num:4
+})
+
+$('#rating-2').rating({
+    mode:'lightEntire',
+    num:3
+})
+
+$('#rating-3').rating({
+    mode:'lightEntire',
+    num:5
+})

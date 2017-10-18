@@ -17,19 +17,19 @@
 		<ul class="info-wrapper">
 			<li class="info-list">
 				<span class="info-left">类型</span>
-				<input type='text' placeholder="单针平缝针" class="info-right"></input>
+				<span class="info-right">单针平缝针</span>
 			</li>
 			<li class="info-list">
 				<span class="info-left">品牌</span>
-				<input type='text' placeholder="兄弟" class="info-right"></input>
+				<span class="info-right">兄弟</span>
 			</li>
 			<li class="info-list">
 				<span class="info-left">型号</span>
-				<input type='text' placeholder="F7300A" class="info-right"></input>
+				<span class="info-right">F7300A</span>
 			</li>
 			<li class="info-list play-father">
 				<span class="info-left">问题</span>
-				<input type='text' placeholder="不剪线" class="info-right"></input>
+				<span class="info-right overflow">不剪线</span>
 				<div class="play play-s play-position">
 					<div class="oval oval-s">
 						<i class="icon-Triangle triangle triangle-s"></i>
@@ -38,7 +38,7 @@
 			</li>
 		</ul>
 	<div class="p-title">维修师傅</div>
-	<div class="pt-wrapper clearfix">
+	<a href="repairer_info.html" class="pt-wrapper a-block clearfix">
 		<div class="pt-pic avatar">
 			<img src="./images/avatar.png">
 		</div>
@@ -52,7 +52,7 @@
 			</p>
 		</div>
 		<span class="icon-arrow-r more-middle"></span>
-	</div>
+	</a>
 	<div class="p-title">报修人</div>
 	<ul class="info-wrapper">
 		<li class="info-list">
@@ -62,17 +62,19 @@
 		<li class="info-list">
 			<span class="info-left info-left-width">联系电话</span>
 			<span class="info-right">18712345678</span>
+			<button class='btn btn-s call'>马上联系</button>
 		</li>
-		<li class="info-list">
+		<li class="info-list repair-addr">
 			<span class="info-left info-left-width">报修地址</span>
 			<span class="info-right">福建省 石狮市 服装城总部大厦二楼大门右拐执行第4排工位</span>
+			<button class='btn btn-s position'>定位</button>
 		</li>
 	</ul>
 	<div class="clearfix cost">
 		<p class="fl total">费用合计</p>
 		<p class="fr number">210.00元</p>
 	</div>
-	<a href="./pay_success.html" class="btn btn-default btn-position">确认完成</a>
+	<a href="./pay_success.html" class="btn btn-default btn-position">维修完成后填写报告单</a>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>

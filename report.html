@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/normalize.js"></script>
+</head>
+<body>
+	<div class="report-wrapper">
+		<div class='header'>请填写真实信息</div>
+	</div>
+	<div class='form-wrapper'>
+		<p class='text'>机器编码：</p>
+		<input type="text" placeholder='请填写机器编码'>
+	</div>
+	<div class='form-wrapper'>
+		<p class='text'>故障问题</p>
+		<input type="text" placeholder='请填写故障问题'>
+	</div>
+	<div class='form-wrapper'>
+		<p class='text'>维修内容</p>
+		<textarea class='intro' placeholder='请填写维修内容'></textarea>
+	</div>
+	<div class="p-title">添加图片</div>
+	<ul class="upload-s-wrapper clearfix">
+		<li class="upload-s-content" style="display:none">
+			<img src="" class="product-p">
+		</li>
+		<li class="upload-s-content">
+			<label for="upload">
+				<img src="./images/add.png" class="add-icon">
+				<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
+			</label>
+		</li>
+	</ul>
+	<a href="javascript:;" class="btn btn-default btn-bottom">提交</a>
+
+	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
+	<script type="text/javascript" src="./js/public.js"></script>
+</body>
+</html>

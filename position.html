@@ -9,22 +9,83 @@
 	<script type="text/javascript" src="./js/normalize.js"></script>
 </head>
 <body>
-	<div class='nav-wrapper clearfix'>
+	<div class='nav-wrapper blur clearfix'>
 		<a href="./personal_data.html" class='nav-item fl'><i class='icon-user'></i></a>
 		<a href="./position.html" class='nav-item fl nav-item-active'>机修</a>
 		<a href="./lease.html" class='nav-item fl'>租赁</a>
 		<a href="./order.html" class='nav-item fl'>订单</a>
-		<a href="" class='nav-item fl'><i class="icon-menu"></i></a>
+		<a href="javascript:;" class='nav-item fl menu'><i class="icon-menu"></i></a>
 	</div>
-	<div class="bg-wrapper" id="lease">
-		<div class="title title-position">
-			<p class="title-top">助力您的生产</p>
-			<p class="title-bottom">完善企业认证信息即可加速租赁流程</p>
+	<div class="search-box">
+		<div class="select">
+			<span>定位中</span>
+			<i class="icon-down"></i>
 		</div>
-		<div class="bg-fixed">
-			<a href="./repair_type.html" class="btn btn-default">我要报修</a>
-			<a href="./repair.html" class="btn btn-white btn-bottom">我要接单</a>
+		<input type="search" name="" placeholder="搜索类型">
+		<i class="icon-search"></i>
+	</div>
+	<div class="city-select">
+		<ul class='city-list'>
+			<li>泉州市一二三四</li>
+			<li class="city-selected">泉州市2</li>
+			<li>泉州市3</li>
+			<li>泉州市4</li>
+			<li>泉州市5</li>
+			<li>泉州市6</li>
+			<li>泉州市7</li>
+			<li>泉州市8</li>
+			<li>泉州市9</li>
+			<li>泉州市10</li>
+			<li>泉州市11</li>
+			<li>泉州市12</li>
+			<li>泉州市13</li>
+			<li>泉州市14</li>
+			<li>泉州市15</li>
+			<li>泉州市16</li>
+		</ul>
+		<div class="current-city">
+			<span>当前城市：</span>
+			<span class="city">泉州市</span>
+			<a href="#" class="charge">切换<i class="icon-arrow-r"></i></a>
 		</div>
+	</div>
+	<div class="button">
+		<input type="hidden" value="0">
+		<div class="button-switch"></div>
+		<div class="button-text-off">附近师傅</div>
+		<div class="button-text-on">附近工单</div>
+	</div>
+	<div class="location">
+		<i class="icon-location"></i>
+	</div>
+	<div>
+		<i class="icon-tool"></i>
+		<i class="icon-worker"></i>
+	</div>
+	<div class="menu-wrapper">
+		<div class="menu-header blur">
+			<a href="./personal_data.html" class='fl'><i class='icon-user'></i></a>
+			<i class="serve">全部服务</i>
+			<i class="icon-X close"></i>
+		</div>
+		<div class="menu-list">
+			<a href="#">
+				<i class="icon-repair"></i>
+				<p>机修</p>
+			</a>
+			<a href="#">
+				<i class="icon-lease"></i>
+				<p>租赁</p>
+			</a>
+			<a href="#">
+				<i class="icon-order"></i>
+				<p>订单</p>
+			</a>
+		</div>
+	</div>
+	<div class="btn-fixed">
+		<a href="./repair_type.html" class="btn btn-default">我要报修</a>
+		<a href="./repair.html" class="btn btn-white btn-bottom">我要接单</a>
 	</div>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>

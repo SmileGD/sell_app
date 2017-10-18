@@ -15,7 +15,7 @@
 				<span class="pt-v-t">头像</span>
 				<span class="icon-arrow-r more-middle"></span>
 				<div class="pt-pic pt-p-fr">
-					<img src="./images/avatar3.png">
+					<img src="./images/avatar3.png" class="avatar3">
 				</div>
 			</div>
 			<ul class="info-wrapper verify">
@@ -26,7 +26,14 @@
 				<li class="info-list">
 					<label for='gender'>
 						<span class="info-left">性别</span>
-						<input type="" name="" placeholder="请选择性别" id="gender">
+						<span class=" gender-container">
+							<span class="hui">请选择性别</span>
+						</span>
+						<select id='gender' class="gender">
+							<option value="男">男</option>
+							<option value="女">女</option>
+							<option value="保密">保密</option>
+						</select>
 						<span class="icon-arrow-r more"></span>
 					</label>
 				</li>

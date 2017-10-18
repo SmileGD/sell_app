@@ -5,48 +5,40 @@
 	<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title></title>
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm.css">
-	<link rel="stylesheet" href="./SUI-Mobile-dev/dist/css/sm-extend.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src='./js/normalize.js'></script>
 </head>
 <body>
-	<div class="page-group">
-		<div class="page page-current">
-			<ul class="info-wrapper verify">
-				<li class="info-list">
-					<span class="info-left">收货人</span>
-					<input type='text' placeholder="姓名"></input>
-				</li>
-				<li class="info-list">
-					<span class="info-left">联系电话</span>
-					<input type='text' placeholder="手机或固话"></input>
-				</li>
-				<li class="info-list">
-					<label class="city-picker">
-						<span class="info-left">选择地区</span>
-						<input type='text' placeholder="地区信息" id='city-picker'></input>
-						<span class="icon-arrow-r more"></span>
-					</label>
-				</li>
-				<li class="info-list">
-					<span class="info-left">详细地址</span>
-					<input type='text' placeholder="街道门牌信息" ></input>
-				</li>
-				<li class="info-list">
-					<span class="info-left">邮政编码</span>
-					<input type='text' placeholder="请填写正确的邮政编码" ></input>
-				</li>
-			</ul>
-			<button type="button" class="btn btn-default btn-fixed btn-disabled">确定</button>
-		</div>
+	<ul class="info-wrapper verify">
+		<li class="info-list">
+			<span class="info-left">收货人</span>
+			<input type='text' placeholder="姓名"></input>
+		</li>
+		<li class="info-list">
+			<span class="info-left">联系电话</span>
+			<input type='text' placeholder="手机或固话"></input>
+		</li>
+		<li class="info-list">
+			<span class="info-left">选择地区</span>
+			<span class="w-11" id="city-picker"><span class="hui">地区信息</span></span>
+			<span class="icon-arrow-r more"></span>
+		</li>
+		<li class="info-list">
+			<span class="info-left">详细地址</span>
+			<input type='text' placeholder="街道门牌信息" ></input>
+		</li>
+		<li class="info-list">
+			<span class="info-left">邮政编码</span>
+			<input type='text' placeholder="请填写正确的邮政编码" ></input>
+		</li>
+	</ul>
+	<div class="btn-fixed">
+		<a href='#' class="btn btn-default btn-disabled">确定</a>
 	</div>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type='text/javascript' src='./node_modules/zepto/dist/zepto.js'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-extend.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='./SUI-Mobile-dev/dist/js/sm-city-picker.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="./js/city.js"></script>
+	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
 </body>
 </html>
