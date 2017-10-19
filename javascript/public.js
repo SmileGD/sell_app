@@ -19,6 +19,12 @@ $('.btn-announce').each(function(){
     })
 })
 
+//弹出框
+if($('script[src="./js/bootstrap.min.js"]').length > 0){
+    $('[data-toggle="popover"]').popover()
+}
+
+
 //点击播放按钮 切换播放图标
 // $('.play').each(function(){
 //     $(this).on('click',function(){
@@ -75,6 +81,12 @@ $('.info-radio').on('click',function(){
     $(this).find('.icon-check').show();
 })
 
+//问题报修选中状态
+$('.info-p-i').on('click',function(){
+    $(this).siblings('.info-p-i').removeClass('selected');
+    // $(this).prev('.info-p-i').css('borderBottom','0');
+    $(this).addClass('selected');
+})
 
 //时间选择
 $('.date').each(function(){
@@ -91,13 +103,13 @@ $('.gender').each(function(){
 })
 
 //轮播图
-if ($('script[src="./node_modules/swiper/dist/js/swiper.min.js"]').length > 0){
+if ($('script[src="./js/swiper.min.js"]').length > 0){
     var swiper = new Swiper('.swiper-container',{
         pagination: '.swiper-pagination',
         slidesPerView: 1,
         paginationClickable: true,
         spaceBetween: 30,
-        loop: true,
+        loop: true
     });
 }
 

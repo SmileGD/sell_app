@@ -7,11 +7,11 @@
 
 @font-face {
 	font-family: 'machine';
-	src:  url('fonts/machine.eot?r4wn00');
-	src:  url('fonts/machine.eot?r4wn00#iefix') format('embedded-opentype'),
-		url('fonts/machine.ttf?r4wn00') format('truetype'),
-		url('fonts/machine.woff?r4wn00') format('woff'),
-		url('fonts/machine.svg?r4wn00#machine') format('svg');
+	src:  url('fonts/machine.eot?3hwd2m');
+	src:  url('fonts/machine.eot?3hwd2m#iefix') format('embedded-opentype'),
+		url('fonts/machine.ttf?3hwd2m') format('truetype'),
+		url('fonts/machine.woff?3hwd2m') format('woff'),
+		url('fonts/machine.svg?3hwd2m#machine') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -69,6 +69,9 @@
 }
 .icon-confirm:before {
 	content: "\e917";
+}
+.icon-my-order:before {
+	content: "\e924";
 }
 .icon-tmp-2:before {
 	content: "\e901";
@@ -144,11 +147,6 @@
 
 
 
-
-
-
-
-
 body {
 	background-color: #eee;
 }
@@ -159,12 +157,14 @@ p,h1,h2,h3,h4 {
 input {
 	border-style: none;
 }
+
 input:focus,textarea:focus,button {
 	outline: none;
 }
 input::placeholder,textarea::placeholder,.time-placeholder {
 	font-size: 0.8rem;
-	color: @ccc;
+	color: #b2b2b2;
+	font-weight: 300;
 }
 a {
 	color: #000;
@@ -175,6 +175,9 @@ ul,textarea {
 	margin: 0;
 	list-style: none;
 	border: 0;
+}
+button {
+	outline: none;
 }
 .clearfix:after {
 	content: "";
@@ -226,13 +229,21 @@ ul,textarea {
 		background: #000;
 	}
 }
-
+.map {
+	position: absolute;
+	width: 100%;
+	height: calc(~"100% - 4.2rem");
+}
 // 按钮
 .btn {
 	display: block;
 	border: none;
 	border-radius: 0.25rem;
 	text-align: center;
+	padding: 0;
+	&:focus {
+		outline: none;
+	}
 }
 .btn-white {
 	width: 16.5rem;
@@ -273,6 +284,7 @@ ul,textarea {
 }
 .btn-xs {
 	height: 1.5rem;
+	line-height: 1.1rem;
 	font-size: 0.8rem;
 	padding: 0.2rem 0.95rem;
 	border: 1px solid #353535;
@@ -284,7 +296,7 @@ ul,textarea {
 	padding: 0.5rem 0;
 	background: @fff;
 	color: #000;
-	border: 0.05rem solid #000;
+	border: 1px solid #000;
 	margin-left: 0.6rem;
 }
 .btn-span{
@@ -292,7 +304,7 @@ ul,textarea {
 	width: 4.0rem;
 	height: 1.5rem;
 	font-size: 0.8rem;
-	border: 0.05rem solid #353535;
+	border: 1px solid #353535;
 	box-sizing: border-box;
 	background: #fff;
 	margin-left: 0.5rem;
@@ -306,7 +318,7 @@ ul,textarea {
 .btn-active {
 	color: @fff;
 	background: @green;
-	border: 0.05rem solid @green;
+	border: 1px solid @green;
 }
 .btn-position {
 	margin-top: 1.5rem
@@ -347,9 +359,10 @@ ul,textarea {
 		margin-bottom: 0.4rem;
 	}
 }
+
 //表单
 .info-wrapper {
-	padding-left: 0.7rem;
+	// padding-left: 0.7rem;
 	background: #fff;
 	list-style: none;
 	margin-top: 0.5rem;
@@ -377,21 +390,14 @@ ul,textarea {
 
 		}
 	}
-	.repair-addr{
-		height: 2.6rem;
-		position: relative;
-		.position{
-			width: 3.5rem;
-			height: 1.5rem;
-			position: absolute;
-			right: 0.7rem;
-			bottom: 0.7rem;
-		}
-	}
 	.info-list {
 		padding: 0.55rem 0.7rem 0.55rem 0;
-		border-bottom: 0.05rem solid #e5e5e5;
+		margin-left: 0.7rem;
+		border-bottom: 1px solid #e5e5e5;
 		font-size: 0;
+		&:last-child {
+			border-bottom: 0;
+		}
 		select {
 			font-size: 0.8rem;
 		}
@@ -399,7 +405,7 @@ ul,textarea {
 			display: block;
 			width: 100%;
 		}
-		label{
+		label {
 			width: 100%;
 		}
 		.checked {
@@ -426,18 +432,13 @@ ul,textarea {
 			line-height: 1.1rem;
 			font-size: 0.8rem;
 			color: @gray;
-			.img-users{
+			.img-users {
 				width: 2.1rem;
 				height: 2.1rem;
 			}
 		}
-		.overflow{
-			display: inline-block;
-			width: 12rem;
-			vertical-align: top;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
+		.autowrap {
+
 		}
 		.last-exp {
 			width: 12.0rem;
@@ -513,7 +514,7 @@ ul,textarea {
 			line-height: 1.1rem;
 			font-size: 0.8rem;
 		}
-		.gender{
+		.gender {
 			opacity: 0;
 			position: absolute;
 			left: -49.95rem;
@@ -525,7 +526,7 @@ ul,textarea {
 				width: 2rem;
 			}
 		}
-		.call{
+		.call {
 			height: 1.5rem;
 			float: right;
 			margin-top: -0.25rem;
@@ -556,11 +557,26 @@ ul,textarea {
 			}
 		}
 	}
-	.info-rating{
+	.selected {
+		margin-left: 0;
+		padding-left: 0.7rem;
 		border-bottom: 0;
-	}s
-	.info-list:last-child {
+		background: #e5e5e5;
+	}
+	.info-rating {
 		border-bottom: 0;
+	}
+	.repair-addr {
+		height: 2.6rem;
+		line-height: 1.3rem;
+		position: relative;
+		.position {
+			width: 3.5rem;
+			height: 1.5rem;
+			position: absolute;
+			right: 0.7rem;
+			bottom: 0.4rem;
+		}
 	}
 }
 
@@ -657,7 +673,7 @@ ul,textarea {
 		padding: 0.25rem 0.8rem;
 		font-size: 0.7rem;
 		color: #353535;
-		border: 0.05rem solid @ccc;
+		border: 1px solid @ccc;
 		border-radius: 0.3rem;
 	}
 }
@@ -941,12 +957,21 @@ ul,textarea {
 	padding: 0.5rem 0.7rem 0.55rem;
 	background: #fff;
 	.total {
+		float: left;
 		height: 1.1rem;
 		line-height: 1.1rem;
 		font-size: 0.8rem;
 		margin-top: 0.25rem;
 	}
+	.payornot{
+		float: left;
+		font-size: 0.7rem;
+		color: #999;
+		margin-left: 0.8rem;
+		margin-top: 0.3rem;
+	}
 	.number {
+		float: right;
 		height: 1.65rem;
 		line-height: 1.65rem;
 		font-size: 1.2rem;
@@ -956,11 +981,10 @@ ul,textarea {
 .nav-wrapper {
 	padding: 0.55rem 0;
 	background: @fff;
-	position: fixed;
-	z-index: 999;
 	width: 100%;
+	display: flex;
 	.nav-item {
-		width: 20%;
+		flex: 1;
 		height: 0.9rem;
 		line-height: 0.9rem;
 		font-size: 0.7rem;
@@ -975,49 +999,16 @@ ul,textarea {
 		color: #000;
 	}
 }
-.nav-5 {
-	padding: 0.55rem 0;
-	background: @fff;
-	width: 100%;
-	.nav-item {
-		width: 20%;
-		height: 0.9rem;
-		line-height: 0.9rem;
-		font-size: 0.7rem;
-		color: #9b9b9b;
-		text-align: center;
-		i {
-			font-size: 0.9rem;
-			color: #000;
-		}
-	}
-	.nav-item-active {
-		color: #000;
-	}
-}
-.nav-6 {
-	padding: 0.55rem 0;
-	background: @fff;
-	width: 100%;
-	.nav-item {
-		width: 16.66%;
-		height: 0.9rem;
-		line-height: 0.9rem;
-		font-size: 0.7rem;
-		color: #9b9b9b;
-		text-align: center;
-		i {
-			font-size: 0.9rem;
-			color: #000;
-		}
-	}
-	.nav-item-active {
-		color: #000;
-	}
-}
+
 //租赁内容
 .bg-wrapper {
-	position: relative;
+	position: absolute;
+	width: 100%;
+	height: calc(~"100% - 2rem");
+	img{
+		width: 100%;
+		height: 100%;
+	}
 	.bg-mask {
 		position: fixed;
 		left: 0;
@@ -1096,7 +1087,7 @@ ul,textarea {
 			flex: 1;
 			position: relative;
 			top: -0.45rem;
-			border-bottom: 0.05rem solid #e5e5e5;
+			border-bottom: 1px solid #e5e5e5;
 		}
 		.text {
 			display: inline-block;
@@ -1132,7 +1123,7 @@ ul,textarea {
 .checkbox+.checkbox-icon {
 	width: 1.05rem;
 	height: 1.05rem;
-	border: 0.05rem solid #ccc;
+	border: 1px solid #ccc;
 	border-radius: 50%;
 	display: inline-block;
 	vertical-align: bottom;
@@ -1195,7 +1186,7 @@ ul,textarea {
 		.add-icon {
 			width: 1.4rem;
 			height: 1.4rem;
-			margin: 0.75rem;
+			margin: 0.7rem;
 		}
 		.product-p {
 			width: 2.9rem;
@@ -1221,7 +1212,7 @@ ul,textarea {
 			font-size: 0.8rem;
 			color: #000;
 		}
-		.time-container{
+		.time-container {
 			display: inline-block;
 			width: 11.0rem;
 		}
@@ -1229,7 +1220,7 @@ ul,textarea {
 			position: absolute;
 			left: -50.0rem;
 			top: 0;
-			&::active{
+			&::active {
 				color:#f00;
 			}
 		}
@@ -1291,21 +1282,18 @@ ul,textarea {
 	.icon-search {
 		position: absolute;
 		left: 7.4rem;
-		top: 0.35rem;
+		top: 0.4rem;
 		font-size: 0.6rem;
 		color: #b2b2b2;
 	}
 }
 .blur{
-	box-shadow: 0 1px .1rem rgba(0, 0, 0, .05);
+	box-shadow: 0 .1rem 0.2rem rgba(0, 0, 0, .05) inset;
 }
 .search-box {
 	width: 100%;
 	height: 2.2rem;
-	position: absolute;
-	left: 0;
-	top: 2.0rem;
-	z-index: 998;
+	position: relative;
 	font-size: 0;
 	padding: 0.4rem 0.7rem;
 	box-sizing: border-box;
@@ -1411,7 +1399,10 @@ ul,textarea {
 .istyle {
 	font-size: 0.8rem;
 	color: #09bb07;
-	margin-left: 0.7rem;
+	padding: 0 0.7rem;
+	&:focus {
+		outline: none;
+	}
 }
 
 .announce {
@@ -1453,11 +1444,11 @@ ul,textarea {
 			height: 1.1rem;
 			line-height: 1.1rem;
 			padding: 0.7rem 0;
-			border-top: 0.05rem solid #e5e5e5;
+			border-top: 1px solid #e5e5e5;
 		}
 		.check {
 			color: #000;
-			border-right: 0.05rem solid #e5e5e5;
+			border-right: 1px solid #e5e5e5;
 		}
 		.return {
 			color: #02bb00;
@@ -1473,7 +1464,7 @@ ul,textarea {
 	background: @fff;
 	.step-line {
 		width: 11.35rem;
-		height: 0.05rem;
+		height: 1px;
 		border: 1px solid #d8d8d8;
 		position: absolute;
 		left: 3.85rem;
@@ -1526,10 +1517,12 @@ ul,textarea {
 }
 
 .select-text {
+	height: 2.2rem;
 	font-size: 0.8rem;
 	padding: 0.55rem 0 0.55rem 0.7rem;
 	color: @888;
 	background: @fff;
+	box-sizing: border-box;
 }
 
 .eqm-text {
@@ -1621,6 +1614,7 @@ ul,textarea {
 		margin-top: 1.0rem;
 	}
 	.payee{
+		font-size: 0.7rem;
 		padding: 0.5rem 0.7rem;
 		background: #fff;
 		margin: 1rem 0;
@@ -1707,7 +1701,7 @@ ul,textarea {
 	.order-title {
 		padding: 0.7rem;
 		background: @fff;
-		border-bottom: 0.05rem solid @ccc;
+		border-bottom: 1px solid @ccc;
 		font-size: 0.7rem;
 		span:last-child {
 			float: right;
@@ -1717,8 +1711,8 @@ ul,textarea {
 	.order-total {
 		padding: 0.7rem;
 		background: @fff;
-		border-top: 0.05rem solid @ccc;
-		border-bottom: 0.05rem solid @ccc;
+		border-top: 1px solid @ccc;
+		border-bottom: 1px solid @ccc;
 		font-size: 0.8rem;
 		color: @999;
 		text-align: right;
@@ -1792,7 +1786,8 @@ ul,textarea {
 				position: absolute;
 				left: 0;
 				top: 50%;
-				transform: translate(-100%,-50%);
+				z-index: 2;
+				transform: translate(-95%,-50%);
 				border-top: 0.2rem solid transparent;
 				border-right: 0.2rem solid #fff;
 				border-bottom: 0.2rem solid transparent;
@@ -1865,7 +1860,7 @@ ul,textarea {
 	background: #fff;
 	.recharge {
 		padding: 1.3rem 1.0rem;
-		border-bottom: 0.05rem solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
 		position: relative;
 		.balance {
 			height: 1.0rem;
@@ -2024,7 +2019,7 @@ ul,textarea {
 .button-on {
 	background: #45c01a;
 	.button-switch {
-		left: calc(100% - 29px);
+		left: calc(~"100% - 1.45rem");
 	}
 	.button-text-off {
 		transform: scale(1);
@@ -2043,7 +2038,7 @@ ul,textarea {
 	bottom: 7.0rem;
 	text-align: center;
 	background: #fff;
-	border: 0.05rem solid #f8f8f8;
+	border: 1px solid #f8f8f8;
 	border-radius: 0.25rem;
 	.icon-location {
 		position: absolute;
@@ -2092,14 +2087,13 @@ ul,textarea {
 	}
 	.menu-list {
 		display: flex;
-		border-top: 0.05rem solid #e5e5e5;
 		background: #fff;
 		a {
 			flex: 1;
 			font-size: 0.7rem;
 			padding: 0.8rem 0 0.65rem;
 			text-align: center;
-			border-right: 0.05rem solid #e5e5e5;
+			border-right: 1px solid #e5e5e5;
 			&:last-child{
 				border-right: 0;
 			}
