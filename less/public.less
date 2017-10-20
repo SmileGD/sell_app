@@ -219,6 +219,8 @@ button {
 	padding: 1rem;
 	.swiper-slide{
 		img{
+			width: 11.5rem;
+			height: 11.5rem;
 			margin: 0 auto;
 		}
 	}
@@ -408,6 +410,9 @@ button {
 		label {
 			width: 100%;
 		}
+		.timeto {
+			margin: 0 0.3rem
+		}
 		.checked {
 			float:right;
 			font-size: 0.7rem;
@@ -427,8 +432,11 @@ button {
 		.info-left-width {
 			width: 4.0rem;
 		}
+		.vl-t {
+			vertical-align: top;
+		}
 		.info-right {
-			height: 1.1rem;
+			// height: 1.1rem;
 			line-height: 1.1rem;
 			font-size: 0.8rem;
 			color: @gray;
@@ -438,6 +446,12 @@ button {
 			}
 		}
 		.autowrap {
+			display: inline-block;
+			width: 14.0rem;
+			line-height: 1.6rem;
+			font-size: 0.8rem;
+			margin-top: -0.25rem;
+			color: @gray;
 
 		}
 		.last-exp {
@@ -519,6 +533,10 @@ button {
 			position: absolute;
 			left: -49.95rem;
 		}
+		.gender-container{
+			display: inline-block;
+			width: 11.4rem;
+		}
 		.free {
 			float: right;
 			position: relative;
@@ -573,9 +591,8 @@ button {
 		.position {
 			width: 3.5rem;
 			height: 1.5rem;
-			position: absolute;
-			right: 0.7rem;
-			bottom: 0.4rem;
+			float: right;
+			margin-top: -0.25rem;
 		}
 	}
 }
@@ -589,7 +606,16 @@ button {
 		height: 3rem;
 		border: 0.1rem solid #4a4a4a;
 		border-radius: 50%;
+		box-sizing: border-box;
 		.triangle {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-40%,-50%);
+			font-size: 1.1rem;
+			color: #4a4a4a;
+		}
+		.icon-center {
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -603,6 +629,7 @@ button {
 	.oval-s {
 		width: 1.6rem;
 		height: 1.6rem;
+		box-sizing: border-box;
 		.triangle-s {
 			font-size: 0.7rem;
 		}
@@ -619,14 +646,6 @@ button {
 		.speak {
 		font-size: 2.0rem;
 		}
-	}
-}
-.play-father {
-	position: relative;
-	.play-position {
-		position: absolute;
-		right: 0.7rem;
-		bottom: 0.2rem;
 	}
 }
 //头部标题
@@ -1183,6 +1202,18 @@ button {
 		float: left;
 		box-sizing: border-box;
 		border: 1px solid @ccc;
+		position: relative;
+		.close{
+			padding: 0.2rem;
+			font-size: 0.5rem;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: translate(50%,-50%);
+			color: #fff;
+			background: #e64340;
+			border-radius: 50%;
+		}
 		.add-icon {
 			width: 1.4rem;
 			height: 1.4rem;
@@ -1214,7 +1245,6 @@ button {
 		}
 		.time-container {
 			display: inline-block;
-			width: 11.0rem;
 		}
 		.date{
 			position: absolute;
@@ -1527,7 +1557,7 @@ button {
 
 .eqm-text {
 	font-size: 0.8rem;
-	width: 2.25rem;
+	width: 3rem;
 	margin-left: 1.75rem;
 	white-space: nowrap;
 	overflow: hidden;
@@ -1798,21 +1828,33 @@ button {
 }
 
 .user-wrapper {
-	position: fixed;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,.1);
+	position: absolute;
+	left: -100%;
+	top: 0;
+	transition: all 1s ease;
+	.user-mask{
+		width: calc(~"100% - 10.9rem");
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		background: rgba(0,0,0,.5);
+		display: none;
+	}
 	.user-info {
-		position: fixed;
-		// left: -10.9rem;
+		position: absolute;
+		left: 0;
 		top: 0;
 		width: 10.9rem;
 		height: 100%;
-		padding: 2.5rem 0 1.3rem 1.5rem;
+		padding: 0 0 1.3rem 1.5rem;
 		background: #fff;
 		position: relative;
 		box-sizing: border-box;
 		.user {
+			display: inline-block;
 			margin-bottom: 3.65rem;
 			.user-text {
 				font-size: 0.5rem;
@@ -1823,7 +1865,10 @@ button {
 						color: #1aad19;
 						margin-right: 0.25rem;
 					}
-					margin: 0 0.35rem 0 0.65rem;
+					margin: 0 1rem 0 0;
+					&:last-child {
+						margin-right: 0;
+					}
 				}
 			}
 		}
@@ -1855,6 +1900,11 @@ button {
 		}
 	}
 }
+
+.user-show.user-wrapper{
+	left: 0;
+}
+
 .recharge-wrapper {
 	margin: 0.5rem 0.7rem;
 	background: #fff;
@@ -2035,7 +2085,7 @@ button {
 	height: 1.7rem;
 	position: absolute;
 	left: 1.1rem;
-	bottom: 7.0rem;
+	bottom: 8rem;
 	text-align: center;
 	background: #fff;
 	border: 1px solid #f8f8f8;
@@ -2113,7 +2163,6 @@ button {
 	position: absolute;
 	left: 0;
 	top: 4.2rem;
-	z-index: 997;
 	background: #ccc;
 	display: none;
 	.city-list {

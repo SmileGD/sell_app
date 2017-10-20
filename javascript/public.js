@@ -21,7 +21,11 @@ $('.btn-announce').each(function(){
 
 //弹出框
 if($('script[src="./js/bootstrap.min.js"]').length > 0){
-    $('[data-toggle="popover"]').popover()
+    $('[data-toggle="popover"]').popover().on('show.bs.popover',function(){
+        setTimeout(function(){
+            $('[data-toggle="popover"]').popover('hide')
+        },3000)
+    })
 }
 
 
@@ -31,11 +35,11 @@ if($('script[src="./js/bootstrap.min.js"]').length > 0){
 //         var i=$(this).find('i');
 //         var voice = $('.preloader_1');
 //         if(i.hasClass('icon-Triangle')){
-//             i.removeClass('icon-Triangle');
-//             i.addClass('icon-pause');
+//             i.removeClass('icon-Triangle triangle');
+//             i.addClass('icon-center icon-pause');
 //         }else if(i.hasClass('icon-pause')){
-//             i.removeClass('icon-pause');
-//             i.addClass('icon-Triangle');
+//             i.removeClass('icon-center icon-pause');
+//             i.addClass('icon-Triangle triangle');
 //         }else if(i.hasClass('icon-speak')){
 //             i.hide();
 //             voice.show();
@@ -83,8 +87,8 @@ $('.info-radio').on('click',function(){
 
 //问题报修选中状态
 $('.info-p-i').on('click',function(){
-    $(this).siblings('.info-p-i').removeClass('selected');
-    // $(this).prev('.info-p-i').css('borderBottom','0');
+    $(this).siblings('.info-p-i').removeClass('selected').css('borderBottom','1px solid #e5e5e5');
+    $(this).prev('.info-p-i').css('borderBottom','0');
     $(this).addClass('selected');
 })
 
@@ -134,6 +138,41 @@ $('.close').on('click',function(){
 $('.select').on('click',function(){
     $('.city-select').toggle();
 })
+
+//用户信息的显示与隐藏
+if($('.user-wrapper').length > 0) {
+//点击显示和隐藏用户信息
+    $('.user-control').on('click',function(){
+        console.log(123);
+        $('.user-wrapper').addClass('user-show');
+        $('.user-mask').fadeIn(1000);
+    })
+    $('.user-mask').on('click',function(){
+        $('.user-wrapper').removeClass('user-show');
+        $('.user-mask').fadeOut(1000);
+    })
+
+//侧滑显示与隐藏用户信息菜单
+    var startX = 0;
+    var moveX;
+    var distanceX;
+    document.addEventListener("touchstart",function(e){
+        startX = e.targetTouches[0].clientX;
+    })
+    document.addEventListener("touchmove",function(e){
+        moveX = e.targetTouches[0].clientX;
+        distanceX = moveX - startX;
+    })
+    document.addEventListener("touchend",function(e){
+        if(distanceX > 100) {
+            $('.user-wrapper').addClass('user-show');
+            $('.user-mask').fadeIn(1000);
+        }else if(distanceX < -100) {
+            $('.user-wrapper').removeClass('user-show');
+            $('.user-mask').fadeOut(1000);
+        }
+    })
+}
 
 //picker
 if ($('script[src="./js/single.js"]').length > 0){
@@ -449,3 +488,4 @@ $('#rating-3').rating({
     mode:'lightEntire',
     num:5
 })
+
