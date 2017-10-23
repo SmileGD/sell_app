@@ -19,23 +19,25 @@
 			<span class="info-left">企业名称*</span>
 			<input type='text' placeholder="请输入完整名称">
 		</li>
-		<li class="info-list">
+		<li class="info-list infoSelect">
 			<span class="info-left">企业类型*</span>
-			<input type='text' placeholder="请选择企业类型">
+			<span id="picker1" class="select-container"><span class="hui">请选择企业类型</span></span>
 			<span class="icon-arrow-r more"></span>
 		</li>
 		<li class="info-list">
-			<label for='date'>
+			<label for='date' class="label">
 				<span class="info-left">成立时间*</span>
-				<span class="time-container time-placeholder">请选择年份</span>
+				<span class="time-container"><span class="time-placeholder">请选择年份</span></span>
 				<span class="icon-arrow-r more"></span>
-				<input type="date" class="date" id="date" style="opacity: 0;">
+				<input type="date" class="date" id="date">
 			</label>
 		</li>
 		<li class="info-list">
-			<span class="info-left">主要加工*</span>
-			<input type='text' placeholder="请选择可加工产品类型">
-			<span class="icon-arrow-r more"></span>
+			<a href="./main_machining.html">
+				<span class="info-left">主要加工*</span>
+				<span class="select-container"><span class="hui">请选择可加工产品类型</span></span>
+				<span class="icon-arrow-r more"></span>
+			</a>
 		</li>
 		<li class="info-list">
 			<span class="info-left">员工总数*</span>
@@ -43,8 +45,7 @@
 		</li>
 		<li class="info-list">
 			<span class="info-left">主要设备*</span>
-			<input type='text' placeholder="请选择设备及数量">
-			<span class="icon-arrow-r more"></span>
+			<input id='picker3' type='text' placeholder="请填写设备及数量">
 		</li>
 		<li class="info-list">
 			<span class="info-left">厂房面积</span>
@@ -52,7 +53,7 @@
 		</li>
 		<li class="info-list">
 			<span class="info-left">销售渠道*</span>
-			<input type='text' placeholder="请选择销售渠道">
+			<span id="picker2" class="select-container"><span class="hui">请选择销售渠道</span></span>
 			<span class="icon-arrow-r more"></span>
 		</li>
 		<li class="info-list">
@@ -90,6 +91,18 @@
 			</label>
 		</li>
 	</ul>
+	<div class="p-title">产品照片</div>
+	<ul class="upload-s-wrapper clearfix">
+		<li class="upload-s-content" style="display:none">
+				<img src="" class="product-p">
+		</li>
+		<li class="upload-s-content">
+			<label for="upload">
+				<img src="./images/add.png" class="add-icon">
+				<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
+			</label>
+		</li>
+	</ul>
 	<button type="button" class="btn btn-default btn-top">提交审核</button>
 
 
@@ -98,7 +111,5 @@
 	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
 
-	<script>
-	</script>
 </body>
 </html>

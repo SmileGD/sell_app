@@ -96,6 +96,7 @@ $('.info-p-i').on('click',function(){
 $('.date').each(function(){
     $(this).on('change',function(){
         $(this).siblings('.time-container').html($(this).val());
+        $(this).siblings('.container-s').html($(this).val());
     })
 })
 
@@ -105,6 +106,9 @@ $('.gender').each(function(){
         $(this).siblings('.gender-container').html($(this).val());
     })
 })
+
+//点击放大或缩放图片
+
 
 //轮播图
 if ($('script[src="./js/swiper.min.js"]').length > 0){
@@ -136,8 +140,14 @@ $('.close').on('click',function(){
 
 //定位下拉列表
 $('.select').on('click',function(){
-    $('.city-select').toggle();
+    $('.city-select').fadeToggle(1000);
 })
+
+//关闭地区下拉框
+$('.map').on('click',function(){
+    $('.city-select').fadeOut(1000);
+})
+
 
 //用户信息的显示与隐藏
 if($('.user-wrapper').length > 0) {
@@ -174,8 +184,18 @@ if($('.user-wrapper').length > 0) {
     })
 }
 
-//picker
-if ($('script[src="./js/single.js"]').length > 0){
+//地址选择
+if($('.city-list').length > 0){
+    var lis = $('.city-list').children();
+    lis.on('click',function(){
+        $(this).siblings('li').removeClass('city-selected');
+        $(this).addClass('city-selected');
+        $('.current-location').text($(this).text());
+    })
+}
+
+//几成新选择
+if ($('.oldAndNew').length > 0){
     var data1 = [
         {
         text: '5成新',
@@ -226,6 +246,59 @@ if ($('script[src="./js/single.js"]').length > 0){
     });
 }
 
+//公司信息选择
+if ($('.infoSelect').length > 0){
+    var data1 = [
+        {
+        text: '纺织服装类加工企业',
+         value: 1
+        }, {
+        text: '加工个体户',
+        value: 2
+        }
+    ];
+
+    var data2 = [
+        {
+        text: '内销',
+         value: 1
+        }, {
+        text: '外销',
+        value: 2
+        }
+    ];
+    var picker1El = document.getElementById('picker1');
+    var picker2El = document.getElementById('picker2');
+
+
+   if(picker1El){
+        var picker1 = new Picker({
+            data: [data1]
+        });
+
+        picker1.on('picker.select', function (selectedVal, selectedIndex) {
+            picker1El.innerText = data1[selectedIndex[0]].text;
+        });
+
+        picker1El.addEventListener('click', function () {
+            picker1.show();
+        });
+   }
+
+    if(picker2El){
+        var picker2 = new Picker({
+            data: [data2]
+        });
+
+        picker2.on('picker.select', function (selectedVal, selectedIndex) {
+            picker2El.innerText = data2[selectedIndex[0]].text;
+        });
+
+        picker2El.addEventListener('click', function () {
+            picker2.show();
+        });
+    }
+}
 //三级联动
 if($('script[src="./js/city.js"]').length > 0){
     var nameEl = document.getElementById('city-picker');

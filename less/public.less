@@ -7,11 +7,11 @@
 
 @font-face {
 	font-family: 'machine';
-	src:  url('fonts/machine.eot?3hwd2m');
-	src:  url('fonts/machine.eot?3hwd2m#iefix') format('embedded-opentype'),
-		url('fonts/machine.ttf?3hwd2m') format('truetype'),
-		url('fonts/machine.woff?3hwd2m') format('woff'),
-		url('fonts/machine.svg?3hwd2m#machine') format('svg');
+	src:  url('fonts/machine.eot?7p0f10');
+	src:  url('fonts/machine.eot?7p0f10#iefix') format('embedded-opentype'),
+		url('fonts/machine.ttf?7p0f10') format('truetype'),
+		url('fonts/machine.woff?7p0f10') format('woff'),
+		url('fonts/machine.svg?7p0f10#machine') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -33,6 +33,9 @@
 
 .icon-down:before {
 	content: "\e923";
+}
+.icon-position:before {
+	content: "\e925";
 }
 .icon-lease:before {
 	content: "\e91c";
@@ -147,6 +150,7 @@
 
 
 
+
 body {
 	background-color: #eee;
 }
@@ -161,7 +165,7 @@ input {
 input:focus,textarea:focus,button {
 	outline: none;
 }
-input::placeholder,textarea::placeholder,.time-placeholder {
+input::placeholder,textarea::placeholder {
 	font-size: 0.8rem;
 	color: #b2b2b2;
 	font-weight: 300;
@@ -229,6 +233,26 @@ button {
 	}
 	.swiper-pagination-bullet-active {
 		background: #000;
+	}
+}
+.ui-datepicker {
+	.ui-datepicker-header {
+		background: #1aad19;
+		.ui-datepicker-month,.ui-datepicker-year {
+			color: #fff;
+			border: 0;
+			background: transparent;
+		}
+	}
+	.ui-state-default {
+		text-align: center;
+	}
+	.ui-state-highlight,.ui-widget-header .ui-state-highlight {
+		color: #fff;
+		background: #1aad19;
+	}
+	.ui-timepicker-div .ui_tpicker_time .ui_tpicker_time_input {
+		border: none;
 	}
 }
 .map {
@@ -323,10 +347,10 @@ button {
 	border: 1px solid @green;
 }
 .btn-position {
-	margin-top: 1.5rem
+	margin: 1.5rem auto 0.7rem
 }
 .btn-top {
-	margin: 1.05rem auto 0.7rem;
+	margin: 1rem auto 0.7rem;
 }
 .btn-bottom {
 	margin: 0.7rem auto;
@@ -364,7 +388,6 @@ button {
 
 //表单
 .info-wrapper {
-	// padding-left: 0.7rem;
 	background: #fff;
 	list-style: none;
 	margin-top: 0.5rem;
@@ -411,7 +434,7 @@ button {
 			width: 100%;
 		}
 		.timeto {
-			margin: 0 0.3rem
+			margin: 0 0.4rem
 		}
 		.checked {
 			float:right;
@@ -482,10 +505,17 @@ button {
 		}
 		.w-11 {
 			display: inline-block;
-			width: 11rem;
+			width: 11.4rem;
+			height: .7rem;
 		}
 		.hui {
-				color: #ccc;
+			color: #b2b2b2;
+			font-weight: 300;
+		}
+		.time-placeholder {
+			font-size: 0.8rem;
+			color: #b2b2b2;
+			font-weight: 300;
 		}
 		.w-16 {
 			display: inline-block;
@@ -855,8 +885,8 @@ button {
 		}
 		.pt-18 {
 			font-size: 0.9rem;
-			height: 1.35rem;
-			line-height: 1.35rem;
+			height: 1.3rem;
+			line-height: 1.3rem;
 		}
 		.pt-content {
 			font-size: 0.7rem;
@@ -1245,11 +1275,17 @@ button {
 		}
 		.time-container {
 			display: inline-block;
+			width: 11rem;
+		}
+		.container-s {
+			display: inline-block;
+			width: 4.5rem;
 		}
 		.date{
 			position: absolute;
 			left: -50.0rem;
 			top: 0;
+			opacity: 0;
 			&::active {
 				color:#f00;
 			}
@@ -1264,8 +1300,16 @@ button {
 			margin-right: 0.7rem;
 			color: @999;
 		}
+		.select-container {
+			display: inline-block;
+			width: 11.4rem;
+		}
 		input {
-			width: 10.0rem;
+			width: 11.4rem;
+			padding: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		input[type=button] {
 			position: absolute;
@@ -1353,7 +1397,7 @@ button {
 	}
 	input[type=search] {
 		vertical-align: middle;
-		width: 13rem;
+		width: 12rem;
 		height: 1.4rem;
 		padding: 0.25rem 0.7rem 0.25rem 1.1rem;
 		font-size: 0.6rem;
@@ -1371,10 +1415,17 @@ button {
 		font-size: 0.6rem;
 		color: #9b9b9b;
 	}
+	.search-text {
+		display: inline-block;
+		font-size: 0.7rem;
+		color: #4a4a4a;
+		padding: 0 0.4rem;
+		vertical-align: middle;
+	}
 }
 
 .problem-list {
-	padding: 0.7rem;
+	padding: .7rem .7rem .3rem;
 	background: @fff;
 }
 .problem-item {
@@ -1553,6 +1604,10 @@ button {
 	color: @888;
 	background: @fff;
 	box-sizing: border-box;
+	.w-16 {
+		display: inline-block;
+		width: 16.2rem;
+	}
 }
 
 .eqm-text {
@@ -2172,12 +2227,12 @@ button {
 			width: 28%;
 			height: 0.7rem;
 			display: inline-block;
-			padding: 0.3rem 0.2rem;
+			padding: .5rem .2rem;
 			font-size: 0.7rem;
 			text-align: center;
 			background: #fff;
 			border-radius: 0.25rem;
-			margin: 0.2rem 0.15rem;
+			margin: 0.25rem 0.15rem;
 			white-space: nowrap;
 			overflow: hidden;
 		}
@@ -2215,5 +2270,97 @@ button {
 		text-align: center;
 		color: #4a4a4a;
 		background: #f8e71c;
+	}
+}
+
+.acq-company {
+	margin-bottom: 0.5rem;
+	.pt-wrapper {
+		padding: 0.6rem 0.7rem 0.7rem;
+		margin: 0;
+		.avatar {
+			width: 2.1rem;
+			height: 2.1rem;
+			img {
+				width: 2.1rem;
+				height: 2.1rem;
+			}
+		}
+	}
+	.ordered {
+		font-size: 0.7rem;
+		padding: 0.25rem 0 0.25rem 3.5rem;
+		color: #4a4a4a;
+		background: #fff;
+		border-top: 1px solid #efeff4;
+	}
+
+}
+
+.info-detail {
+	.header{
+		margin-bottom: 0.5rem;
+		img {
+			width: 100%;
+			height: 11.35rem;
+		}
+		div {
+			padding: 0.55rem 0.7rem;
+			background: #fff;
+			h3 {
+				font-size: 0.9rem;
+				font-weight: 400;
+				margin-bottom: 0.4rem;
+			}
+			p {
+				font-size: 0.7rem;
+				color: #999;
+				i {
+					margin-right: 0.4rem;
+				}
+			}
+		}
+	}
+	.info-item {
+		padding: 0.6rem 0.7rem;
+		background: #fff;
+		margin-bottom: 0.5rem;
+		h4 {
+			height: 1.0rem;
+			line-height: 1.0rem;
+			font-size: 0.7rem;
+			padding-left: 0.4rem;
+			border-left: 0.15rem solid #1aad19;
+		}
+		p {
+			line-height: 1.0rem;
+			font-size: 0.7rem;
+			color: #999;
+			margin-top: 0.4rem;
+		}
+		ul {
+			margin-top: 0.5rem;
+			li {
+				float: left;
+				width: 2.9rem;
+				height: 2.9rem;
+				font-size: 0.6rem;
+				text-align: center;
+				line-height: 2.9rem;
+				margin-right: 0.7rem;
+				color: #999;
+				background: #e5e5e5;
+				&:last-child {
+					margin-right: 0;
+				}
+				img {
+					width: 2.9rem;
+					height: 2.9rem;
+				}
+			}
+			li.active{
+				transform: scale(2);
+			}
+		}
 	}
 }
