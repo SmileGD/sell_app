@@ -16,12 +16,12 @@
 	<ul class="info-wrapper verify">
 		<li class="info-list">
 			<span class="info-left">姓名</span>
-			<input type='text' placeholder="**文(请输入完整姓名)" class="info-right"></input>
+			<input type='text' placeholder="**文(请输入完整姓名)" class="info-right">
 
 		</li>
 		<li class="info-list">
 			<span class="info-left">身份证号</span>
-			<input type='text' placeholder="输入身份证号" class="info-right"></input>
+			<input type='text' placeholder="输入身份证号" class="info-right">
 		</li>
 		<li class="info-list">
 			<span class="info-left">手机号码</span>
@@ -30,7 +30,7 @@
 		</li>
 		<li class="info-list">
 			<span class="info-left">验证码</span>
-			<input type='text' placeholder="输入验证码" class="info-right"></input>
+			<input type='number' placeholder="输入验证码" class="info-right">
 		</li>
 	</ul>
 	<div class='form-wrapper'>
@@ -46,8 +46,12 @@
 		<textarea class='intro' placeholder='请输入自我介绍'></textarea>
 	</div>
 	<div class='agree'>
-		<input type="checkbox" name="checkbox" class="check">
-		<span>已阅读并同意<a href="#">《相关条约》</a></span>
+		<input type="checkbox" name="checkbox" class="checkbox" id="agree">
+		<label for="agree" class='checkbox-icon default-addr'></label>
+		<label for="agree">
+			<span>已阅读并同意</span>
+		</label>
+		<a href="#">《相关条约》</a>
 	</div>
 	<a href="./into_lease.html" class="btn btn-default btn-bottom">保存</a>
 	<div class="explain-b">

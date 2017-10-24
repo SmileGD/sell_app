@@ -11,17 +11,20 @@
 <body>
 	<div class="page-group">
 		<div class="page page-current">
-			<div class="pt-wrapper p-info clearfix">
-				<span class="pt-v-t">头像</span>
-				<span class="icon-arrow-r more-middle"></span>
-				<div class="pt-pic pt-p-fr">
-					<img src="./images/avatar3.png" class="avatar3">
+			<label for='upload-ava'>
+				<div class="pt-wrapper p-info clearfix">
+					<span class="pt-v-t">头像</span>
+					<span class="icon-arrow-r more-middle"></span>
+					<div class="pt-pic pt-p-fr">
+						<img src="./images/avatar3.png" class="avatar3">
+					</div>
 				</div>
-			</div>
+			</label>
+			<input type="file" id="upload-ava" style="display: none">
 			<ul class="info-wrapper verify">
 				<li class="info-list">
 					<span class="info-left">姓名</span>
-					<input type='text' placeholder="请填写姓名"></input>
+					<input type='text' placeholder="请填写姓名">
 				</li>
 				<li class="info-list">
 					<label for='gender'>
@@ -39,19 +42,19 @@
 				</li>
 				<li class="info-list">
 					<span class="info-left">电话</span>
-					<input type='tel' maxlength="11" placeholder="请填写正确手机号码" ></input>
+					<input type='tel' maxlength="11" placeholder="请填写正确手机号码" >
 				</li>
 				<li class="info-list">
 					<span class="info-left">微信</span>
-					<input type='text' placeholder="请填写微信号码" ></input>
+					<input type='text' placeholder="请填写微信号码" >
 				</li>
 				<li class="info-list">
 					<span class="info-left">QQ</span>
-					<input type='text' placeholder="请填写QQ号码" ></input>
+					<input type='number' placeholder="请填写QQ号码" >
 				</li>
 				<li class="info-list">
 					<span class="info-left">个性签名</span>
-					<input type='text' placeholder="简短介绍一下自己" ></input>
+					<input type='text' placeholder="简短介绍一下自己" >
 				</li>
 			</ul>
 			<button class="btn btn-default">保存</button>

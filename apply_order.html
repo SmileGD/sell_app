@@ -12,11 +12,11 @@
 	<ul class="info-wrapper verify">
 		<li class="info-list">
 			<span class="info-left">申请数量</span>
-			<input type='number' placeholder="请输入数量" class="info-right"></input>
+			<input type='number' placeholder="请输入数量" class="info-right">
 		</li>
 		<li class="info-list">
 			<span class="info-left">申请说明</span>
-			<input type='text' placeholder="请填写相关情况说明或接单优势" class="info-right last-exp"></input>
+			<input type='text' placeholder="请填写相关情况说明或接单优势" class="info-right last-exp">
 		</li>
 	</ul>
 	<div class="p-title">上传图片</div>
@@ -32,8 +32,12 @@
 		</li>
 	</ul>
 	<div class='agree agree-position'>
-		<input type="checkbox" name="checkbox">
-		<span>已阅读并同意<a href="#">《泰禾优选争议处理规范》</a></span>
+		<input type="checkbox" name="checkbox" class="checkbox" id="agree">
+		<label for="agree" class='checkbox-icon default-addr'></label>
+		<label for="agree">
+			<span>已阅读并同意</span>
+		</label>
+		<a href="#">《泰禾优选争议处理规范》</a>
 	</div>
 	<a href="#" class="btn btn-default">发送申请</a>
 

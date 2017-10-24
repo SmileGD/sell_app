@@ -92,6 +92,11 @@ $('.info-p-i').on('click',function(){
     $(this).addClass('selected');
 })
 
+//报修问题选择
+$('.problem-item').on('click',function(){
+    $(this).toggleClass('btn-active');
+})
+
 //时间选择
 $('.date').each(function(){
     $(this).on('change',function(){
@@ -99,6 +104,19 @@ $('.date').each(function(){
         $(this).siblings('.container-s').html($(this).val());
     })
 })
+
+//精确到秒的时间选择
+if ($('script[src="./js/jquery-ui-timepicker-addon.min.js"]').length > 0){
+    $('.date-picker').datetimepicker({
+        lang: "ch",
+        timeFormat: "HH:mm:ss",
+        dateFormat: "yy-mm-dd",
+        dayNamesMin: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+        monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+        changeMonth: true,
+        changeYear: true,
+    });
+}
 
 //性别选择
 $('.gender').each(function(){
@@ -142,7 +160,6 @@ var items = [
         h: 400
     }
 ];
-
 $('.img-container > li').on('click',function(){
     var options = {
         index: $(this).index()

@@ -149,11 +149,14 @@
 }
 
 
-
+.horse {
+	color: #fff;
+}
 
 body {
 	background-color: #eee;
 }
+
 p,h1,h2,h3,h4 {
 	margin: 0;
 	padding: 0;
@@ -172,6 +175,7 @@ input::placeholder,textarea::placeholder {
 }
 a {
 	color: #000;
+	outline: none;
 	text-decoration: none;
 }
 ul,textarea {
@@ -182,6 +186,9 @@ ul,textarea {
 }
 button {
 	outline: none;
+}
+input,a,ul,li,button {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .clearfix:after {
 	content: "";
@@ -257,11 +264,22 @@ button {
 	}
 }
 
-.viewer-canvas {
-	background: #4a4a4a;
+.checkbox {
+	display: none;
+	margin-right:0.6rem;
 }
-.pswp {
-	// display: none;
+.checkbox+.checkbox-icon {
+	width: 1.05rem;
+	height: 1.05rem;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: bottom;
+}
+.checkbox:checked+.checkbox-icon {
+	background: url('../images/checked.png') no-repeat;
+	background-position: -0.05rem -0.05rem;
+	background-size: 1.15rem 1.15rem;
 }
 
 .map {
@@ -300,6 +318,10 @@ button {
 	color: #fff;
 	background: @green;
 	margin: 0 auto;
+	&:visited {
+		color: #fff;
+		background: @green;
+	}
 }
 .btn-danger {
 	width: 16.5rem;
@@ -523,7 +545,7 @@ button {
 		}
 		.time-placeholder {
 			font-size: 0.8rem;
-			color: #b2b2b2;
+			// color: #b2b2b2;
 			font-weight: 300;
 		}
 		.w-16 {
@@ -580,7 +602,10 @@ button {
 			float: right;
 			position: relative;
 			input {
-				width: 2rem;
+				width: 2.2rem;
+				padding: 1px 0;
+				white-space: nowrap;
+				overflow: hidden;
 			}
 		}
 		.call {
@@ -593,20 +618,24 @@ button {
 			margin-bottom: 0.2rem;
 			font-size: 0.8rem;
 			color: #4a4a4a;
-			meter {
+			.trust-wrapper {
+				display: inline-block;
+				position: relative;
 				width: 7.65rem;
-				height: 0.6rem;
-				margin: 0 0.7rem 0 1.2rem;
-			}
-			meter::-webkit-meter-bar, meter::-webkit-meter-optimum-value {
-				border-radius: 0.6rem;
-			}
-			meter::-webkit-meter-bar {
+				height: .6rem;
+				vertical-align: middle;
+				border-radius: 0.3rem;
+				margin: 0 .7rem 0 1.2rem;
 				background: #d8d8d8;
-			}
-			meter::-webkit-meter-suboptimum-value {
-				background: #1aad19;
-				border-radius: 0.6rem;
+				.trust-progress {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 80%;
+					height: 100%;
+					border-radius: 0.3rem;
+					background: #1aad19;
+				}
 			}
 			.trust-value {
 				font-size: 0.5rem;
@@ -811,18 +840,31 @@ button {
 //同意条约
 .agree {
 	padding-left: 0.7rem;
-	.check {
-		width: 0.6rem;
-		height: 0.6rem;
+	.checkbox {
+		display: none;
+		margin-right:0.6rem;
+	}
+	.checkbox+.checkbox-icon {
+		width: .6rem;
+		height: .6rem;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		display: inline-block;
 		vertical-align: middle;
+	}
+	.checkbox:checked+.checkbox-icon {
+		background: url('../images/checked.png') no-repeat;
+		background-size: .6rem .6rem;
 	}
 	span {
 		font-size: 0.6rem;
 		color: #9b9b9b;
 		vertical-align: middle;
-		a {
-			color: #576b95;
-		}
+	}
+	a {
+		font-size: 0.6rem;
+		color: #576b95;
+		vertical-align: middle;
 	}
 }
 .agree-position {
@@ -1174,23 +1216,7 @@ button {
 		}
 	}
 }
-.checkbox {
-	display: none;
-	margin-right:0.6rem;
-}
-.checkbox+.checkbox-icon {
-	width: 1.05rem;
-	height: 1.05rem;
-	border: 1px solid #ccc;
-	border-radius: 50%;
-	display: inline-block;
-	vertical-align: bottom;
-}
-.checkbox:checked+.checkbox-icon {
-	background: url('../images/checked.png') no-repeat;
-	background-position: -0.05rem -0.05rem;
-	background-size: 1.15rem 1.15rem;
-}
+
 .rating-text{
 	width: 100%;
 	box-sizing: border-box;
@@ -1842,6 +1868,8 @@ button {
 	}
 	div {
 		img {
+			width: 7.7rem;
+			height: 13.7rem;
 			margin-right: 1.0rem;
 			&:last-child {
 				margin-right: 0;
