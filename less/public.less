@@ -235,6 +235,7 @@ button {
 		background: #000;
 	}
 }
+
 .ui-datepicker {
 	.ui-datepicker-header {
 		background: #1aad19;
@@ -255,6 +256,14 @@ button {
 		border: none;
 	}
 }
+
+.viewer-canvas {
+	background: #4a4a4a;
+}
+.pswp {
+	// display: none;
+}
+
 .map {
 	position: absolute;
 	width: 100%;
@@ -2338,15 +2347,17 @@ button {
 			color: #999;
 			margin-top: 0.4rem;
 		}
-		ul {
+		.img-views {
+			float: left;
+			width: 14.4rem;
+			height: 2.9rem;
 			margin-top: 0.5rem;
+			overflow: hidden;
 			li {
 				float: left;
 				width: 2.9rem;
 				height: 2.9rem;
-				font-size: 0.6rem;
 				text-align: center;
-				line-height: 2.9rem;
 				margin-right: 0.7rem;
 				color: #999;
 				background: #e5e5e5;
@@ -2360,6 +2371,35 @@ button {
 			}
 			li.active{
 				transform: scale(2);
+			}
+		}
+		.more-photos {
+			float: right;
+			width: 2.9rem;
+			height: 2.9rem;
+			font-size: 0.6rem;
+			text-align: center;
+			line-height: 2.9rem;
+			margin-top: .5rem;
+			color: #999;
+			background: #e5e5e5;
+		}
+	}
+	.img-container {
+		width: 100%;
+		padding: 0.7rem 0 0.2rem 0.7rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: #fff;
+		li {
+			float: left;
+			width: 5.45rem;
+			height: 5.45rem;
+			margin: 0 .5rem .5rem 0;
+			img {
+				width: 5.45rem;
+				height: 5.45rem;
 			}
 		}
 	}

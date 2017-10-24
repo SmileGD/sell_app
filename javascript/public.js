@@ -107,10 +107,7 @@ $('.gender').each(function(){
     })
 })
 
-//点击放大或缩放图片
-
-
-//轮播图
+// //轮播图
 if ($('script[src="./js/swiper.min.js"]').length > 0){
     var swiper = new Swiper('.swiper-container',{
         pagination: '.swiper-pagination',
@@ -120,6 +117,39 @@ if ($('script[src="./js/swiper.min.js"]').length > 0){
         loop: true
     });
 }
+
+//点击小图 查看大图
+var pswpElement = document.querySelectorAll('.pswp')[0];
+var items = [
+    {
+        src: './images/company-1@3x.png',
+        w: 600,
+        h: 400
+    },
+    {
+        src: './images/company-2@3x.png',
+        w: 600,
+        h: 400
+    },
+    {
+    src: './images/company-3.png',
+        w: 600,
+        h: 400
+    },
+        {
+        src: './images/company-4.png',
+        w: 600,
+        h: 400
+    }
+];
+
+$('.img-container > li').on('click',function(){
+    var options = {
+        index: $(this).index()
+    };
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items,options);
+    gallery.init();
+})
 
 //切换按钮
 $('.button').on('click',function(){
