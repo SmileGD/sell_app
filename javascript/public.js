@@ -187,12 +187,12 @@ $('.close').on('click',function(){
 
 //定位下拉列表
 $('.select').on('click',function(){
-    $('.city-select').fadeToggle(1000);
+    $('.city-select').slideToggle(1000);
 })
 
 //关闭地区下拉框
 $('.map').on('click',function(){
-    $('.city-select').fadeOut(1000);
+    $('.city-select').slideUp(1000);
 })
 
 

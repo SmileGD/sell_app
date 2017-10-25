@@ -7,11 +7,11 @@
 
 @font-face {
 	font-family: 'machine';
-	src:  url('fonts/machine.eot?7p0f10');
-	src:  url('fonts/machine.eot?7p0f10#iefix') format('embedded-opentype'),
-		url('fonts/machine.ttf?7p0f10') format('truetype'),
-		url('fonts/machine.woff?7p0f10') format('woff'),
-		url('fonts/machine.svg?7p0f10#machine') format('svg');
+	src:  url('fonts/machine.eot?gp6ouq');
+	src:  url('fonts/machine.eot?gp6ouq#iefix') format('embedded-opentype'),
+		url('fonts/machine.ttf?gp6ouq') format('truetype'),
+		url('fonts/machine.woff?gp6ouq') format('woff'),
+		url('fonts/machine.svg?gp6ouq#machine') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,6 +31,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-manage:before {
+	content: "\e926";
+}
 .icon-down:before {
 	content: "\e923";
 }
@@ -147,6 +150,7 @@
 .icon-tmp-1:before {
 	content: "\e900";
 }
+
 
 
 .horse {
@@ -980,6 +984,19 @@ input,a,ul,li,button {
 		line-height: 1.1rem;
 		padding: 1.05rem 0;
 		font-size: 0.8rem;
+	}
+	.repairer {
+		border: 1px solid rgba(150,150,150,.5);
+		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+		.repairer-ava {
+			width: 3.2rem;
+			height: 3.2rem;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
 	}
 	.pt-text {
 		float: left;
@@ -2206,10 +2223,9 @@ input,a,ul,li,button {
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: 999;
 	display: none;
 	.menu-header {
-		padding: 0.5rem 1rem;
+		padding: 0.55rem 1.45rem;
 		display: flex;
 		font-size: 0.9rem;
 		background: #fff;
