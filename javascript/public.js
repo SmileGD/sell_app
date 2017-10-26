@@ -195,6 +195,28 @@ $('.map').on('click',function(){
     $('.city-select').slideUp(1000);
 })
 
+//切换接单类型
+if($('.neutral-header').length > 0){
+    (function(index){
+        var aAll = document.querySelectorAll("a");
+        for(var i = 0;i < aAll.length;i++){
+            if(i == index){
+                aAll[i].classList.add("neutral-active");
+                var firstTarget = aAll[i].dataset["target"];
+                document.querySelector("#"+firstTarget).style.display = "block";
+            }
+            aAll[i].onclick = function(){
+                var prevA = document.querySelector(".neutral-active");
+                prevA.classList.remove("neutral-active");
+                var prevTarget = prevA.dataset["target"];
+                document.querySelector("#"+prevTarget).style.display = "none";
+                this.classList.add("neutral-active");
+                var target = this.dataset["target"];
+                document.querySelector("#"+target).style.display = "block";
+            }
+        }
+    })(0)
+}
 
 //用户信息的显示与隐藏
 if($('.user-wrapper').length > 0) {
