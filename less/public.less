@@ -158,7 +158,7 @@
 }
 
 body {
-	background-color: #eee;
+	background-color: #efeff4;
 }
 
 p,h1,h2,h3,h4 {
@@ -674,7 +674,11 @@ input,a,ul,li,button {
 		}
 	}
 }
-
+	.eqm-last{
+		li:last-child {
+			margin-bottom: 3.75rem;
+		}
+	}
 //播放按钮
 .play {
 	display: inline-block;
@@ -919,6 +923,7 @@ input,a,ul,li,button {
 		.avatar3{
 			width: 3.2rem;
 			height: 3.2rem;
+			border-radius: 50%;
 		}
 	}
 	.avatar {
@@ -926,6 +931,7 @@ input,a,ul,li,button {
 		img{
 			width: 3.0rem;
 			height: 3.0rem;
+			border-radius: 50%;
 		}
 	}
 	.pt-p-b {
@@ -1159,6 +1165,7 @@ input,a,ul,li,button {
 	width: 3.0rem;
 	height: 3.0rem;
 	margin: 1.7rem auto 0;
+	border-radius: 50%;
 }
 .name {
 	font-size: 0.9rem;
@@ -1675,12 +1682,16 @@ input,a,ul,li,button {
 
 .eqm-text {
 	font-size: 0.8rem;
-	width: 3rem;
-	margin-left: 1.75rem;
 	white-space: nowrap;
 	overflow: hidden;
 }
-
+.eqm-ann {
+	font-size: 0.8rem;
+	position: absolute;
+	right: 4.2rem;
+	white-space: nowrap;
+	overflow: hidden;
+}
 .pay-wrapper {
 	width: 9.85rem;
 	height: 8.5rem;
@@ -1843,7 +1854,7 @@ input,a,ul,li,button {
 		background: transparent;
 	}
 	.order-bg {
-		background: transparent;
+		background: #efeff4;
 		margin: 0;
 	}
 	.order-title {
@@ -1976,7 +1987,7 @@ input,a,ul,li,button {
 		.user {
 			display: inline-block;
 			width: 7.7rem;
-			margin-bottom: 3.65rem;
+			margin-bottom: 3rem;
 			.user-text {
 				font-size: 0.5rem;
 				color: @999;
