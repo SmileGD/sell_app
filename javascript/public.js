@@ -58,19 +58,19 @@ if($('script[src="./js/bootstrap.min.js"]').length > 0){
 // })
 
 //除以3的余数的li设置margin-bottom
-if($('.city-list').length > 0){
-    var lis = $('.city-list').children();
-    var l = lis.length % 3;
-    if(l == 0) {
-        for( var i = 0; i < 3; i++){
-            lis[lis.length-i-1].style.marginBottom=2.2+'rem';
-        }
-    }else {
-        for( var i = 0; i < l; i++){
-            lis[lis.length-i-1].style.marginBottom=2.2+'rem';
-        }
-    }
-}
+// if($('.city-list').length > 0){
+//     var lis = $('.city-list').children();
+//     var l = lis.length % 3;
+//     if(l == 0) {
+//         for( var i = 0; i < 3; i++){
+//             lis[lis.length-i-1].style.marginBottom=2.2+'rem';
+//         }
+//     }else {
+//         for( var i = 0; i < l; i++){
+//             lis[lis.length-i-1].style.marginBottom=2.2+'rem';
+//         }
+//     }
+// }
 
 //点击选中勾选
 $('.info-check').each(function(){
