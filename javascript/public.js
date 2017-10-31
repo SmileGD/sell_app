@@ -218,6 +218,21 @@ if($('.neutral-header').length > 0){
     })(0)
 }
 
+//input 宽度自适应设置
+if($('.remoney').length > 0){
+    $('.remoney').on('change',function(){
+        var len = $('.remoney').val().length;
+        console.log(len);
+        if(len < 1){
+            $('.remoney').css('width','3.1rem');
+        }else if(len < 10){
+            $('.remoney').css('width',len*.9+'rem');
+        }else {
+            $('.remoney').css('width','9.2rem');
+        }
+    })
+}
+
 //用户信息的显示与隐藏
 if($('.user-wrapper').length > 0) {
 //点击显示和隐藏用户信息

@@ -191,7 +191,7 @@ ul,textarea {
 button {
 	outline: none;
 }
-input,a,ul,li,button {
+input,a,ul,li,button,.swiper-pagination {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .clearfix:after {
@@ -812,7 +812,7 @@ input,a,ul,li,button {
 	color:@999;
 }
 .title-position {
-	width: 12.6rem;
+	width: 13rem;
 	position: absolute;
 	left: 50%;
 	bottom: 4.75rem;
@@ -1406,8 +1406,13 @@ input,a,ul,li,button {
 	white-space: nowrap;
 	overflow: hidden;
 	background: #f8e71c;
+	position: relative;
+	span {
+		position: relative;
+		left: 0;
+		top: 0;
+	}
 }
-
 .search-wrapper {
 	position: relative;
 	.search {
@@ -2041,9 +2046,10 @@ input,a,ul,li,button {
 	margin: 0.5rem 0.7rem;
 	background: #fff;
 	.recharge {
-		padding: 1.3rem 1.0rem;
+		padding: 1.9rem 1.0rem 1.8rem;
 		border-bottom: 1px solid #e5e5e5;
 		position: relative;
+		font-size: 0;
 		.balance {
 			height: 1.0rem;
 			line-height: 1.0rem;
@@ -2052,26 +2058,37 @@ input,a,ul,li,button {
 		}
 		.text {
 			float: right;
-			line-height: 1.8rem;
+			height: 1.0rem;
+			line-height: 1.0rem;
 			font-size: 0.7rem;
-			margin-left: 0.7rem;
-			color: #e5e5e5;
 		}
-		.money {
+		.remoney {
+			width: 3.1rem;
 			float: right;
-			height: 1.5rem;
-			line-height: 1.5rem;
 			font-size: 1.5rem;
 			color: #e5e5e5;
+			height: 2.1rem;
+			line-height: 2.1rem;
+			padding: 0 .7rem 0 0;
+			margin-top: -.6rem;
+			text-align: right;
+			&::placeholder {
+				font-size: 1.5rem;
+				font-weight: 400;
+				color: #e5e5e5;
+			}
 		}
 		p {
 			font-size: 0.6rem;
 			color: #999;
-			margin-top: 0.25rem;
+			margin-top: .5rem;
 			a{
 				color: #1aad19;
 			}
 		}
+	}
+	.pb-to-14 {
+		padding-bottom: 0.7rem;;
 	}
 	.padding-top {
 		height: 4.6rem;
