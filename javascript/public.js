@@ -120,6 +120,9 @@ if ($('script[src="./js/jquery-ui-timepicker-addon.min.js"]').length > 0){
 
 //性别选择
 $('.gender').each(function(){
+    $(this).on('click',function(){
+        $(this).siblings('.gender-container').html($(this).find("option[selected='selected']").val());
+    })
     $(this).on('change',function(){
         $(this).siblings('.gender-container').html($(this).val());
     })
