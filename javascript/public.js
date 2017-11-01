@@ -240,7 +240,6 @@ if($('.remoney').length > 0){
 if($('.user-wrapper').length > 0) {
 //点击显示和隐藏用户信息
     $('.user-control').on('click',function(){
-        console.log(123);
         $('.user-wrapper').addClass('user-show');
         $('.user-mask').fadeIn(1000);
     })
@@ -634,18 +633,23 @@ $('#rating').rating({
     num:0
 })
 
-$('#rating-1').rating({
-    mode:'lightEntire',
-    num:4
-})
+//固定值星级评分
+var ratingStar = function(el,num){
+    num=parseInt(num);
+    var items = $(el).find('.rating-item');
+    items.each(function(index) {
+        if(index<num){
+            $(this).css('background-image','url(./images/Star_light.png)');
+        }else{
+            $(this).css('background-image','url(./images/Star_off.png)');
+        }
+    });
+}
 
-$('#rating-2').rating({
-    mode:'lightEntire',
-    num:3
-})
+ratingStar('#rating-1',4);
 
-$('#rating-3').rating({
-    mode:'lightEntire',
-    num:5
-})
+ratingStar('#rating-2',3);
+
+ratingStar('#rating-3',5);
+
 
