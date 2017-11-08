@@ -106,15 +106,20 @@ $('.date').each(function(){
 })
 
 //精确到秒的时间选择
-if ($('script[src="./js/jquery-ui-timepicker-addon.min.js"]').length > 0){
-    $('.date-picker').datetimepicker({
-        lang: "ch",
-        timeFormat: "HH:mm:ss",
-        dateFormat: "yy-mm-dd",
-        dayNamesMin: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
-        monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-        changeMonth: true,
-        changeYear: true,
+if ($('#time-picker').length > 0){
+    var now = new Date(),
+        max = new Date(now.getFullYear() + 3, now.getMonth(), now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds());
+    var instance = mobiscroll.datetime('#time-picker', {
+        lang: 'zh',
+        theme: 'ios',
+        display: 'bottom',
+        headerText: '选择达到时间',
+        min: now,
+        max: max,
+        minWidth: 50,
+        dateFormat: 'yy-mm-dd',
+        dateWheels: 'yy mm dd',
+        showLabel: true
     });
 }
 
