@@ -3,31 +3,35 @@ if($('.search').length > 0) {
     $('.search').focus(function(){
         $(this).css("padding-left",'1rem');
         $('.icon-search').css('left','0.6rem');
-    })
+    });
     $('.search').blur(function(){
         if($(this).val().length == 0){
             $(this).css("padding-left",'7.8rem');
             $('.icon-search').css('left','7.4rem');
         }
-    })
+    });
 }
 
 //弹出弹框
 $('.btn-announce').each(function(){
     $(this).on('click',function(){
         $('.announce').css('display','block');
-    })
-})
+    });
+});
 
 //弹出框
 if($('script[src="./js/bootstrap.min.js"]').length > 0){
     $('[data-toggle="popover"]').popover().on('show.bs.popover',function(){
         setTimeout(function(){
-            $('[data-toggle="popover"]').popover('hide')
-        },3000)
-    })
+            $('[data-toggle="popover"]').popover('hide');
+        },3000);
+    });
 }
 
+//菜单按钮
+$('.menu-triger').click(function () {
+    $(this).closest('.menu-content').toggleClass('open');
+});
 
 //点击播放按钮 切换播放图标
 // $('.play').each(function(){
@@ -76,34 +80,34 @@ if($('script[src="./js/bootstrap.min.js"]').length > 0){
 $('.info-check').each(function(){
     $(this).on('click',function(){
         $(this).find('.icon-check').toggle();
-    })
-})
+    });
+});
 
 //点击单选
 $('.info-radio').on('click',function(){
     $(this).siblings('.info-radio').find('.icon-check').hide();
     $(this).find('.icon-check').show();
-})
+});
 
 //问题报修选中状态
 $('.info-p-i').on('click',function(){
     $(this).siblings('.info-p-i').removeClass('selected').css('borderBottom','1px solid #e5e5e5');
     $(this).prev('.info-p-i').css('borderBottom','0');
     $(this).addClass('selected');
-})
+});
 
 //报修问题选择
 $('.problem-item').on('click',function(){
     $(this).toggleClass('btn-active');
-})
+});
 
 //时间选择
 $('.date').each(function(){
     $(this).on('change',function(){
         $(this).siblings('.time-container').html($(this).val());
         $(this).siblings('.container-s').html($(this).val());
-    })
-})
+    });
+});
 
 //精确到秒的时间选择
 if ($('#time-picker').length > 0){
@@ -127,11 +131,11 @@ if ($('#time-picker').length > 0){
 $('.gender').each(function(){
     $(this).on('click',function(){
         $(this).siblings('.gender-container').html($(this).find("option[selected='selected']").val());
-    })
+    });
     $(this).on('change',function(){
         $(this).siblings('.gender-container').html($(this).val());
-    })
-})
+    });
+});
 
 // //轮播图
 if ($('script[src="./js/swiper.min.js"]').length > 0){
@@ -174,34 +178,34 @@ $('.img-container > li').on('click',function(){
     };
     var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items,options);
     gallery.init();
-})
+});
 
 //切换按钮
 $('.button').on('click',function(){
     $(this).toggleClass('button-on');
     $('.icon-tool').toggle();
     $('.icon-worker').toggle();
-})
+});
 
 //菜单按钮弹框
 $('.menu').on('click',function(){
     $('.menu-wrapper').fadeIn();
-})
+});
 
 //关闭菜单按钮
 $('.close').on('click',function(){
     $('.menu-wrapper').fadeOut();
-})
+});
 
 //定位下拉列表
 $('.select').on('click',function(){
     $('.city-select').slideToggle(1000);
-})
+});
 
 //关闭地区下拉框
 $('.map').on('click',function(){
     $('.city-select').slideUp(1000);
-})
+});
 
 //切换接单类型
 if($('.neutral-header').length > 0){
@@ -223,7 +227,7 @@ if($('.neutral-header').length > 0){
                 document.querySelector("#"+target).style.display = "block";
             }
         }
-    })(0)
+    })(0);
 }
 
 //input 宽度自适应设置
