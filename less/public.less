@@ -555,7 +555,7 @@ button,
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
-	box-shadow: 0 .1rem .25rem 0 rgba(0, 0, 0, .11);
+	box-shadow: 0 .1rem .4rem 0 rgba(0, 0, 0, .3);
 	transition: .3s;
 
 	.icon-bars {
@@ -583,14 +583,14 @@ button,
 
 
 .menu-content {
-	position: absolute;
+	z-index: 999;
+	position: fixed;
 	right: 1rem;
 	bottom: 2rem;
 	font-size: 0;
 	transition: all .3s;
 
 	.menu-triger {
-		z-index: 15;
 		float: left;
 	}
 
@@ -657,10 +657,6 @@ button,
 		}
 	}
 }
-
-
-
-
 
 //表单
 .info-wrapper {
