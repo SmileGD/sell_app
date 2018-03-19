@@ -29,45 +29,38 @@
 		<p class="title-bottom">请填写租赁设备的数量以及品质要求</p>
 	</div>
 	<div class="p-title">已选租赁设备</div>
-	<ul class="lease-list">
-		<li class="lease-item">
-			<span class="lease-name">单针平缝机</span>
-			<input type="number" placeholder="数量" class="btn btn-span v-m">
-			<span id="picker1" class='btn btn-span v-m r-104 oldAndNew'><span class="hui">9成新</span></span>
-
+	<ul class="info-wrapper">
+		<li class="info-list">
+			<span class="info-item">单针平缝机</span>
+			<input id="picker-1" class='btn btn-input  fr' placeholder="数量">
+			<input id="picker-2" class='btn btn-input  fr' placeholder="9成新">
 		</li>
-		<li class="lease-item">
-			<span class="lease-name">双针平缝机</span>
-			<input type="number" placeholder="数量" class="btn btn-span v-m">
-			<span id="picker2" class='btn btn-span v-m r-104'><span class="hui">5成新</span></span>
-
+		<li class="info-list">
+			<span class="info-item">双针平缝机</span>
+			<input id="picker-3" class='btn btn-input  fr' placeholder="数量">
+			<input id="picker-4" class='btn btn-input  fr' placeholder="9成新">
 		</li>
 	</ul>
 	<div class="p-title">收货地址</div>
-	<div class='select-text block'>
-		<span id="city-picker" class="time-placeholder w-16">选择收货地址</span>
+	<label for='city-picker' class='select-text block'>
+		<input class="" placeholder="选择收货地址" id="city-picker"></input>
 		<span class="icon-arrow-r more"></span>
-	</div>
+	</label>
 	<div class="p-title">起租日期</div>
 	<label for='date' class='select-text block'>
 		<span class="time-container time-placeholder">选择起租日期</span>
-		<input type="date" class="date" id="date" style="opacity: 0; height: 1.1rem">
+		<input type="date" class="date" id="date" style="opacity: 0;">
 		<span class="icon-arrow-r more"></span>
 	</label>
 	<div class="p-title">还租日期</div>
 	<label for='date-1' class='select-text block'>
 		<span class="time-container time-placeholder">选择还租日期</span>
-		<input type="date" class="date" id="date-1" style="opacity: 0; height: 1.1rem">
+		<input type="date" class="date" id="date-1" style="opacity: 0;">
 		<span class="icon-arrow-r more"></span>
 	</label>
 	<a href="./lease_step3.html" class="btn btn-default btn-top">下一步</a>
 
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type="text/javascript" src="./js/city.js"></script>
-	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
-
-	<script>
-	</script>
 </body>
 </html>

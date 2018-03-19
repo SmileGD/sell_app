@@ -13,9 +13,10 @@
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
     "gulp-less": "^3.3.2",
-    "gulp-plumber": "^1.1.0",
     "gulp-uglify": "^3.0.0",
-    "jquery-ui-timepicker-addon": "^1.6.3",
-    "swiper": "^3.0.0"
+    "jQuery.cxCalendar": "^1.5.3",
+    "swiper": "^3.0.0",
+    "uploadify": "^1.0.7",
+    "zepto": "^1.2.0"
   }
 }

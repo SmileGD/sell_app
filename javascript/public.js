@@ -3,503 +3,140 @@ if($('.search').length > 0) {
     $('.search').focus(function(){
         $(this).css("padding-left",'1rem');
         $('.icon-search').css('left','0.6rem');
-    });
+    })
     $('.search').blur(function(){
         if($(this).val().length == 0){
             $(this).css("padding-left",'7.8rem');
             $('.icon-search').css('left','7.4rem');
         }
-    });
+    })
 }
 
 //弹出弹框
 $('.btn-announce').each(function(){
     $(this).on('click',function(){
         $('.announce').css('display','block');
-    });
-});
-
-//弹出框
-if($('script[src="./js/bootstrap.min.js"]').length > 0){
-    $('[data-toggle="popover"]').popover().on('show.bs.popover',function(){
-        setTimeout(function(){
-            $('[data-toggle="popover"]').popover('hide');
-        },3000);
-    });
-}
-
-//菜单按钮
-$('.menu-triger').click(function () {
-    $(this).closest('.menu-content').toggleClass('open');
-});
+    })
+})
 
 //点击播放按钮 切换播放图标
-// $('.play').each(function(){
-//     $(this).on('click',function(){
-//         var i=$(this).find('i');
-//         var voice = $('.preloader_1');
-//         if(i.hasClass('icon-Triangle')){
-//             i.removeClass('icon-Triangle triangle');
-//             i.addClass('icon-center icon-pause');
-//         }else if(i.hasClass('icon-pause')){
-//             i.removeClass('icon-center icon-pause');
-//             i.addClass('icon-Triangle triangle');
-//         }else if(i.hasClass('icon-speak')){
-//             i.hide();
-//             voice.show();
-//             $('.text-explain-1').hide();
-//             $('.text-explain-2').show();
-//         }
-//         if(voice){
-//             $(this).on('click',function(){
-//                 voice.hide();
-//                 $('.recode').hide();
-//                 $('.play_and_remark').show();
-//                 $('.icon-speak').show();
-//             })
-//         }
-//     })
-// })
-
-//除以3的余数的li设置margin-bottom
-// if($('.city-list').length > 0){
-//     var lis = $('.city-list').children();
-//     var l = lis.length % 3;
-//     if(l == 0) {
-//         for( var i = 0; i < 3; i++){
-//             lis[lis.length-i-1].style.marginBottom=2.2+'rem';
-//         }
-//     }else {
-//         for( var i = 0; i < l; i++){
-//             lis[lis.length-i-1].style.marginBottom=2.2+'rem';
-//         }
-//     }
-// }
+$('.play').each(function(){
+    $(this).on('click',function(){
+        var i=$(this).find('i')[0];
+        if($(i).hasClass('icon-Triangle')){
+            $(i).removeClass('icon-Triangle');
+            $(i).addClass('icon-pause');
+        }else{
+            $(i).removeClass('icon-pause');
+            $(i).addClass('icon-Triangle');
+        }
+    })
+})
 
 //点击选中勾选
 $('.info-check').each(function(){
     $(this).on('click',function(){
-        $(this).find('.icon-check').toggle();
-    });
-});
-
-//点击单选
-$('.info-radio').on('click',function(){
-    $(this).siblings('.info-radio').find('.icon-check').hide();
-    $(this).find('.icon-check').show();
-});
-
-//问题报修选中状态
-$('.info-p-i').on('click',function(){
-    $(this).siblings('.info-p-i').removeClass('selected').css('borderBottom','1px solid #e5e5e5');
-    $(this).prev('.info-p-i').css('borderBottom','0');
-    $(this).addClass('selected');
-});
-
-//报修问题选择
-$('.problem-item').on('click',function(){
-    $(this).toggleClass('btn-active');
-});
+        $(this).find('i').toggle();
+    })
+})
 
 //时间选择
 $('.date').each(function(){
     $(this).on('change',function(){
         $(this).siblings('.time-container').html($(this).val());
-        $(this).siblings('.container-s').html($(this).val());
-    });
-});
+    })
+})
 
-//精确到秒的时间选择
-if ($('#time-picker').length > 0){
-    var now = new Date(),
-        max = new Date(now.getFullYear() + 3, now.getMonth(), now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds());
-    var instance = mobiscroll.datetime('#time-picker', {
-        lang: 'zh',
-        theme: 'ios',
-        display: 'bottom',
-        headerText: '选择达到时间',
-        min: now,
-        max: max,
-        minWidth: 50,
-        dateFormat: 'yy-mm-dd',
-        dateWheels: 'yy mm dd',
-        showLabel: true
-    });
-}
-
-//性别选择
-$('.gender').each(function(){
-    $(this).on('click',function(){
-        $(this).siblings('.gender-container').html($(this).find("option[selected='selected']").val());
-    });
-    $(this).on('change',function(){
-        $(this).siblings('.gender-container').html($(this).val());
-    });
-});
-
-// //轮播图
-if ($('script[src="./js/swiper.min.js"]').length > 0){
+//轮播图
+if ($('script[src="./node_modules/swiper/dist/js/swiper.min.js"]').length > 0){
     var swiper = new Swiper('.swiper-container',{
         pagination: '.swiper-pagination',
         slidesPerView: 1,
         paginationClickable: true,
         spaceBetween: 30,
-        loop: true
+        loop: true,
     });
 }
 
-//点击小图 查看大图
-var pswpElement = document.querySelectorAll('.pswp')[0];
-var items = [
-    {
-        src: './images/company-1@3x.png',
-        w: 600,
-        h: 400
-    },
-    {
-        src: './images/company-2@3x.png',
-        w: 600,
-        h: 400
-    },
-    {
-    src: './images/company-3.png',
-        w: 600,
-        h: 400
-    },
-        {
-        src: './images/company-4.png',
-        w: 600,
-        h: 400
+if ($('script[src="./node_modules/zepto/dist/zepto.js"]').length > 0){
+    //zepto符号替换
+    window.$$=window.Zepto = Zepto;
+
+    $$("#date").calendar({
+        value: ['2017-01-01']
+    });
+    $$("#date-return").calendar({
+        value: ['2017-01-01']
+    });
+
+    if ($('script[src="./SUI-Mobile-dev/dist/js/sm-city-picker.min.js"]').length > 0){
+        $$("#city-picker").cityPicker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+            <button class="button button-link pull-right close-picker">确定</button>\
+            </header>'
+        });
     }
-];
-$('.img-container > li').on('click',function(){
-    var options = {
-        index: $(this).index()
-    };
-    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items,options);
-    gallery.init();
-});
 
-//切换按钮
-$('.button').on('click',function(){
-    $(this).toggleClass('button-on');
-    $('.icon-tool').toggle();
-    $('.icon-worker').toggle();
-});
-
-//菜单按钮弹框
-$('.menu').on('click',function(){
-    $('.menu-wrapper').fadeIn();
-});
-
-//关闭菜单按钮
-$('.close').on('click',function(){
-    $('.menu-wrapper').fadeOut();
-});
-
-//定位下拉列表
-$('.select').on('click',function(){
-    $('.city-select').slideToggle(1000);
-});
-
-//关闭地区下拉框
-$('.map').on('click',function(){
-    $('.city-select').slideUp(1000);
-});
-
-//切换接单类型
-if($('.neutral-header').length > 0){
-    (function(index){
-        var aAll = document.querySelectorAll("a");
-        for(var i = 0;i < aAll.length;i++){
-            if(i == index){
-                aAll[i].classList.add("neutral-active");
-                var firstTarget = aAll[i].dataset["target"];
-                document.querySelector("#"+firstTarget).style.display = "block";
+    $$("#gender").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+        <button class="button button-link pull-right close-picker">确定</button>\
+        </header>',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['男', '女', '保密']
             }
-            aAll[i].onclick = function(){
-                var prevA = document.querySelector(".neutral-active");
-                prevA.classList.remove("neutral-active");
-                var prevTarget = prevA.dataset["target"];
-                document.querySelector("#"+prevTarget).style.display = "none";
-                this.classList.add("neutral-active");
-                var target = this.dataset["target"];
-                document.querySelector("#"+target).style.display = "block";
+        ]
+    });
+    $$("#picker-1").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+        <button class="button button-link pull-left close-picker">取消</button>\
+        <button class="button button-link pull-right close-picker">确定</button>\
+        </header>',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['1件', '2件', '3件', '4件', '5件', '6件', '7件', '8件', '9件', '10件', '11件', '12件', '13件', '14件', '15件', '16件', '17件', '18件', '19件', '20件']
             }
-        }
-    })(0);
-}
-
-//input 宽度自适应设置
-if($('.remoney').length > 0){
-    $('.remoney').on('change',function(){
-        var len = $('.remoney').val().length;
-        console.log(len);
-        if(len < 1){
-            $('.remoney').css('width','3.1rem');
-        }else if(len < 10){
-            $('.remoney').css('width',len*.9+'rem');
-        }else {
-            $('.remoney').css('width','9.2rem');
-        }
-    })
-}
-
-//用户信息的显示与隐藏
-if($('.user-wrapper').length > 0) {
-//点击显示和隐藏用户信息
-    $('.user-control').on('click',function(){
-        $('.user-wrapper').addClass('user-show');
-        $('.user-mask').fadeIn(1000);
-    })
-    $('.user-mask').on('click',function(){
-        $('.user-wrapper').removeClass('user-show');
-        $('.user-mask').fadeOut(1000);
-    })
-
-//侧滑显示与隐藏用户信息菜单
-    var startX = 0;
-    var moveX;
-    var distanceX;
-    document.addEventListener("touchstart",function(e){
-        startX = e.targetTouches[0].clientX;
-    })
-    document.addEventListener("touchmove",function(e){
-        moveX = e.targetTouches[0].clientX;
-        distanceX = moveX - startX;
-    })
-    document.addEventListener("touchend",function(e){
-        if(distanceX > 100) {
-            $('.user-wrapper').addClass('user-show');
-            $('.user-mask').fadeIn(1000);
-        }else if(distanceX < -100) {
-            $('.user-wrapper').removeClass('user-show');
-            $('.user-mask').fadeOut(1000);
-        }
-    })
-}
-
-//地址选择
-if($('.city-list').length > 0){
-    var lis = $('.city-list').children();
-    lis.on('click',function(){
-        $(this).siblings('li').removeClass('city-selected');
-        $(this).addClass('city-selected');
-        $('.current-location').text($(this).text());
-    })
-}
-
-//几成新选择
-if ($('.oldAndNew').length > 0){
-    var data1 = [
-        {
-        text: '5成新',
-         value: 1
-        }, {
-        text: '6成新',
-        value: 2
-        },
-        {
-         text: '7成新',
-         value: 3
-        },
-        {
-         text: '8成新',
-         value: 4
-        },
-        {
-         text: '9成新',
-         value: 5
-        }
-    ];
-
-    var picker1El = document.getElementById('picker1');
-    var picker2El = document.getElementById('picker2');
-
-    var picker1 = new Picker({
-        data: [data1]
+        ]
     });
-
-    picker1.on('picker.select', function (selectedVal, selectedIndex) {
-        picker1El.innerText = data1[selectedIndex[0]].text;
-    });
-
-    picker1El.addEventListener('click', function () {
-        picker1.show();
-    });
-
-    var picker2 = new Picker({
-        data: [data1]
-    });
-
-    picker2.on('picker.select', function (selectedVal, selectedIndex) {
-        picker2El.innerText = data1[selectedIndex[0]].text;
-    });
-
-    picker2El.addEventListener('click', function () {
-        picker2.show();
-    });
-}
-
-//公司信息选择
-if ($('.infoSelect').length > 0){
-    var data1 = [
-        {
-        text: '纺织服装类加工企业',
-         value: 1
-        }, {
-        text: '加工个体户',
-        value: 2
-        }
-    ];
-
-    var data2 = [
-        {
-        text: '内销',
-         value: 1
-        }, {
-        text: '外销',
-        value: 2
-        }
-    ];
-    var picker1El = document.getElementById('picker1');
-    var picker2El = document.getElementById('picker2');
-
-
-   if(picker1El){
-        var picker1 = new Picker({
-            data: [data1]
-        });
-
-        picker1.on('picker.select', function (selectedVal, selectedIndex) {
-            picker1El.innerText = data1[selectedIndex[0]].text;
-        });
-
-        picker1El.addEventListener('click', function () {
-            picker1.show();
-        });
-   }
-
-    if(picker2El){
-        var picker2 = new Picker({
-            data: [data2]
-        });
-
-        picker2.on('picker.select', function (selectedVal, selectedIndex) {
-            picker2El.innerText = data2[selectedIndex[0]].text;
-        });
-
-        picker2El.addEventListener('click', function () {
-            picker2.show();
-        });
-    }
-}
-//三级联动
-if($('script[src="./js/city.js"]').length > 0){
-    var nameEl = document.getElementById('city-picker');
-    nameEl.addEventListener('click', function () {
-        picker.show();
-    });
-
-    var first = [];
-    var second = [];
-    var third = [];
-    var selectedIndex = [0, 0, 0];
-    var checked = [0, 0, 0];
-    function creatList(obj, list){
-        obj.forEach(function(item, index, arr){
-        var temp = new Object();
-        temp.text = item.name;
-        temp.value = index;
-        list.push(temp);
-        })
-    }
-
-    creatList(city, first);
-
-    if (city[selectedIndex[0]].hasOwnProperty('sub')) {
-        creatList(city[selectedIndex[0]].sub, second);
-    } else {
-        second = [{text: '', value: 0}];
-    }
-
-    if (city[selectedIndex[0]].sub[selectedIndex[1]].hasOwnProperty('sub')) {
-        creatList(city[selectedIndex[0]].sub[selectedIndex[1]].sub, third);
-    } else {
-        third = [{text: '', value: 0}];
-    }
-
-    var picker = new Picker({
-        data: [first, second, third],
-        selectedIndex: selectedIndex,
-        title: '地址选择'
-    });
-
-    picker.on('picker.select', function (selectedVal, selectedIndex) {
-        var text1 = first[selectedIndex[0]].text;
-        var text2 = second[selectedIndex[1]].text;
-        var text3 = third[selectedIndex[2]] ? third[selectedIndex[2]].text : '';
-
-        nameEl.innerText = text1 + ' ' + text2 + ' ' + text3;
-    });
-
-    picker.on('picker.change', function (index, selectedIndex) {
-        if (index === 0){
-            firstChange();
-        } else if (index === 1) {
-            secondChange();
-        }
-
-    function firstChange() {
-        second = [];
-        third = [];
-        checked[0] = selectedIndex;
-        var firstCity = city[selectedIndex];
-        if (firstCity.hasOwnProperty('sub')) {
-            creatList(firstCity.sub, second);
-
-            var secondCity = city[selectedIndex].sub[0]
-            if (secondCity.hasOwnProperty('sub')) {
-                creatList(secondCity.sub, third);
-            } else {
-                third = [{text: '', value: 0}];
-                checked[2] = 0;
+    $$("#picker-2").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+        <button class="button button-link pull-left close-picker">取消</button>\
+        <button class="button button-link pull-right close-picker">确定</button>\
+        </header>',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['5成新', '6成新', '7成新', '8成新', '9成新']
             }
-        } else {
-            second = [{text: '', value: 0}];
-            third = [{text: '', value: 0}];
-            checked[1] = 0;
-            checked[2] = 0;
-        }
-
-        picker.refillColumn(1, second);
-        picker.refillColumn(2, third);
-        picker.scrollColumn(1, 0)
-        picker.scrollColumn(2, 0)
-    }
-
-    function secondChange() {
-        third = [];
-        checked[1] = selectedIndex;
-        var first_index = checked[0];
-        if (city[first_index].sub[selectedIndex].hasOwnProperty('sub')) {
-            var secondCity = city[first_index].sub[selectedIndex];
-            creatList(secondCity.sub, third);
-            picker.refillColumn(2, third);
-            picker.scrollColumn(2, 0)
-        } else {
-            third = [{text: '', value: 0}];
-            checked[2] = 0;
-            picker.refillColumn(2, third);
-            picker.scrollColumn(2, 0)
-        }
-    }
-});
-    picker.on('picker.valuechange', function (selectedVal, selectedIndex) {
-        // console.log(selectedVal);
-        // console.log(selectedIndex);
+        ]
     });
-
+    $$("#picker-3").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+        <button class="button button-link pull-left close-picker">取消</button>\
+        <button class="button button-link pull-right close-picker">确定</button>\
+        </header>',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['1件', '2件', '3件', '4件', '5件', '6件', '7件', '8件', '9件', '10件', '11件', '12件', '13件', '14件', '15件', '16件', '17件', '18件', '19件', '20件']
+            }
+        ]
+    });
+    $$("#picker-4").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+        <button class="button button-link pull-left close-picker">取消</button>\
+        <button class="button button-link pull-right close-picker">确定</button>\
+        </header>',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['5成新', '6成新', '7成新', '8成新', '9成新']
+            }
+        ]
+    });
+    $$.init();
 }
 
 //星级评分
@@ -641,24 +278,4 @@ $('#rating').rating({
     mode:'lightEntire',
     num:0
 })
-
-//固定值星级评分
-var ratingStar = function(el,num){
-    num=parseInt(num);
-    var items = $(el).find('.rating-item');
-    items.each(function(index) {
-        if(index<num){
-            $(this).css('background-image','url(./images/Star_light.png)');
-        }else{
-            $(this).css('background-image','url(./images/Star_off.png)');
-        }
-    });
-}
-
-ratingStar('#rating-1',4);
-
-ratingStar('#rating-2',3);
-
-ratingStar('#rating-3',5);
-
 

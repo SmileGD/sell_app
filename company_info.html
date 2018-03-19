@@ -17,81 +17,68 @@
 	<ul class="info-wrapper verify">
 		<li class="info-list">
 			<span class="info-left">企业名称*</span>
-			<input type='text' placeholder="请输入完整名称">
+			<input type='text' placeholder="请输入完整名称"></input>
 		</li>
-		<li class="info-list infoSelect">
+		<li class="info-list">
 			<span class="info-left">企业类型*</span>
-			<span id="picker1" class="select-container"><span class="hui">请选择企业类型</span></span>
+			<input type='text' placeholder="请选择企业类型"></input>
 			<span class="icon-arrow-r more"></span>
 		</li>
 		<li class="info-list">
-			<label for='date' class="label">
+			<label for='date'>
 				<span class="info-left">成立时间*</span>
-				<span class="time-container"><span class="hui">请选择年份</span></span>
+				<span class="time-container time-placeholder">请选择年份</span>
 				<span class="icon-arrow-r more"></span>
-				<input type="date" class="date" id="date">
+				<input type="date" class="date" id="date" style="opacity: 0;">
 			</label>
 		</li>
 		<li class="info-list">
-			<a href="./main_machining.html">
-				<span class="info-left">主要加工*</span>
-				<span class="select-container"><span class="hui">请选择可加工产品类型</span></span>
-				<span class="icon-arrow-r more"></span>
-			</a>
+			<span class="info-left">主要加工*</span>
+			<input type='text' placeholder="请选择可加工产品类型"></input>
+			<span class="icon-arrow-r more"></span>
 		</li>
 		<li class="info-list">
 			<span class="info-left">员工总数*</span>
-			<input type='text' placeholder="请输入企业员工总数">
+			<input type='text' placeholder="请输入企业员工总数"></input>
 		</li>
 		<li class="info-list">
 			<span class="info-left">主要设备*</span>
-			<input id='picker3' type='text' placeholder="请填写设备及数量">
+			<input type='text' placeholder="请选择设备及数量"></input>
+			<span class="icon-arrow-r more"></span>
 		</li>
 		<li class="info-list">
 			<span class="info-left">厂房面积</span>
-			<input type='text' placeholder="比如：500平方">
+			<input type='text' placeholder="比如：500平方"></input>
 		</li>
 		<li class="info-list">
 			<span class="info-left">销售渠道*</span>
-			<span id="picker2" class="select-container"><span class="hui">请选择销售渠道</span></span>
+			<input type='text' placeholder="请选择销售渠道"></input>
 			<span class="icon-arrow-r more"></span>
 		</li>
 		<li class="info-list">
 			<span class="info-left">品牌信息</span>
-			<input type='text' placeholder="请输入品牌名称">
+			<input type='text' placeholder="请输入品牌名称"></input>
 		</li>
 		<li class="info-list">
 			<span class="info-left">企业介绍</span>
-			<input type='text' placeholder="简短的介绍一下企业">
+			<input type='text' placeholder="简短的介绍一下企业"></input>
 		</li>
 	</ul>
 	<div class="p-title">企业信息</div>
 	<ul class="info-wrapper verify">
 		<li class="info-list">
-			<label for="city-picker">
+			<label for="addr-1">
 				<span class="info-left">所在地区</span>
-				<span id="city-picker" class="w-11"></span>
+				<input type="text" id="addr-1">
 				<span class="icon-arrow-r more"></span>
 			</label>
 		</li>
 		<li class="info-list">
 			<span class="info-left">详细地址</span>
-			<input type='text'>
+			<input type='text'></input>
 		</li>
 	</ul>
 	<div class="p-title">企业环境照片</div>
-	<ul class="upload-s-wrapper clearfix">
-		<li class="upload-s-content" style="display:none">
-			<img src="" class="product-p">
-		</li>
-		<li class="upload-s-content">
-			<label for="upload">
-				<img src="./images/add.png" class="add-icon">
-				<input type="file" id='upload' style='display: none' accept="image/gif,image/jpeg,image/jpg,image/png">
-			</label>
-		</li>
-	</ul>
-	<div class="p-title">产品照片</div>
 	<ul class="upload-s-wrapper clearfix">
 		<li class="upload-s-content" style="display:none">
 				<img src="" class="product-p">
@@ -105,11 +92,7 @@
 	</ul>
 	<button type="button" class="btn btn-default btn-top">提交审核</button>
 
-
 	<script type="text/javascript" src="./js/jquery_3.1.1.js"></script>
-	<script type="text/javascript" src="./js/city.js"></script>
-	<script src="./js/picker.min.js"></script>
 	<script type="text/javascript" src="./js/public.js"></script>
-
 </body>
 </html>

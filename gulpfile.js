@@ -2,12 +2,11 @@ var gulp = require('gulp'),
 	less = require('gulp-less'),
 	minifyCSS = require('gulp-csso'),
 	uglify  = require('gulp-uglify'),
-	concat = require('gulp-concat'),
-	plumber = require('gulp-plumber');
+	concat = require('gulp-concat');
 
 gulp.task('less',function(){
 	return gulp.src('./less/*.less')
-	.pipe(plumber())
+
 	.pipe(less())
 	.pipe(minifyCSS())
 	.pipe(concat('style.css'))
